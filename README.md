@@ -1,1809 +1,2573 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SNG — GOD STAYS NEAR</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    background:#fff;
+    color:#080808;
+    overflow-x:hidden;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+/* NAV */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:75px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-  <title>SNG — GOD STAYS NEAR</title>
+    padding:0 5%;
+
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid #e8e8e8;
 
-  <meta name="description" content="SNG Streetwear — GOD STAYS NEAR">
+    z-index:1000;
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:-2px;
+}
 
-  <style>
+.logo span{
+    opacity:.3;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+.nav-links{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+.nav-links a{
+    text-decoration:none;
+    color:#080808;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2px;
+}
 
-    body {
-      font-family: "Inter", sans-serif;
-      background: #080808;
-      color: white;
-      overflow-x: hidden;
-    }
+.nav-links a:hover{
+    opacity:.4;
+}
 
-    button {
-      font-family: inherit;
-    }
+.cart-button{
+    background:#080808;
+    color:white;
+    border:0;
+    padding:11px 18px;
+    border-radius:30px;
+    font-size:11px;
+    font-weight:700;
+}
 
-    /* =========================
-       NAVBAR
-    ========================= */
+/* HERO */
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 75px;
-      z-index: 1000;
+.hero{
+    min-height:100vh;
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-      padding: 0 5%;
+    position:relative;
+    overflow:hidden;
 
-      background: rgba(8,8,8,.78);
-      backdrop-filter: blur(18px);
+    background:#fff;
+}
 
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
+.hero-logo{
+    position:absolute;
 
-    .logo {
-      font-size: 27px;
-      font-weight: 900;
-      letter-spacing: -2px;
-    }
+    width:min(700px,85vw);
+    height:min(700px,85vw);
 
-    .logo span {
-      opacity: .35;
-    }
+    background-image:url("images/logo.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
 
-    .nav-links {
-      display: flex;
-      gap: 35px;
-      list-style: none;
-    }
+    opacity:.055;
 
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: .3s;
-    }
+    pointer-events:none;
+}
 
-    .nav-links a:hover {
-      opacity: .45;
-    }
+.hero-content{
+    position:relative;
+    z-index:2;
 
-    .cart-button {
-      border: 1px solid rgba(255,255,255,.25);
-      background: transparent;
-      color: white;
-      padding: 10px 17px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: .3s;
-    }
+    text-align:center;
 
-    .cart-button:hover {
-      background: white;
-      color: black;
-    }
+    max-width:850px;
+    padding:40px;
+}
 
-    /* =========================
-       HERO
-    ========================= */
+.hero-small{
+    font-size:10px;
+    letter-spacing:7px;
+    font-weight:700;
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    margin-bottom:35px;
 
-      position: relative;
-      overflow: hidden;
+    opacity:.45;
+}
 
-      background:
-        radial-gradient(circle at 50% 40%, #252525 0%, #0b0b0b 42%, #050505 80%);
-    }
+.hero h1{
+    font-size:clamp(55px,9vw,125px);
 
-    .hero::before {
-      content: "SNG";
-      position: absolute;
+    line-height:.9;
+    letter-spacing:-6px;
 
-      font-size: min(40vw, 600px);
-      font-weight: 900;
+    font-weight:900;
+}
 
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(255,255,255,.06);
+.hero-description{
+    max-width:570px;
 
-      pointer-events: none;
-    }
+    margin:35px auto 0;
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 30px;
-    }
+    font-size:13px;
+    line-height:1.9;
 
-    .hero-small {
-      font-size: 11px;
-      letter-spacing: 7px;
-      text-transform: uppercase;
-      opacity: .55;
-      margin-bottom: 25px;
-    }
+    color:#555;
+}
 
-    .hero h1 {
-      font-size: clamp(80px, 18vw, 240px);
-      line-height: .75;
-      font-weight: 900;
-      letter-spacing: -10px;
-    }
+.hero-button{
+    margin-top:40px;
 
-    .hero-slogan {
-      margin-top: 35px;
-      font-size: 14px;
-      letter-spacing: 9px;
-      font-weight: 500;
-    }
+    padding:17px 32px;
 
-    .hero-button {
-      display: inline-block;
-      margin-top: 45px;
+    border:1px solid #111;
 
-      padding: 17px 35px;
+    background:#080808;
+    color:white;
 
-      color: black;
-      background: white;
+    font-size:11px;
+    font-weight:800;
 
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
+    letter-spacing:2px;
 
-      transition: .35s;
-    }
+    transition:.35s;
+}
 
-    .hero-button:hover {
-      transform: translateY(-5px);
-      background: #d8d8d8;
-    }
+.hero-button:hover{
+    background:white;
+    color:#080808;
 
-    /* =========================
-       MARQUEE
-    ========================= */
-
-    .marquee {
-      overflow: hidden;
-      white-space: nowrap;
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
-
-      padding: 17px 0;
-      background: #000;
-    }
+    transform:translateY(-4px);
+}
 
-    .marquee-track {
-      display: inline-block;
-      animation: marquee 18s linear infinite;
-    }
+/* MARQUEE */
 
-    .marquee span {
-      margin-right: 50px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 4px;
-    }
+.marquee{
+    overflow:hidden;
 
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
-    }
+    white-space:nowrap;
 
-    /* =========================
-       PRODUCTS
-    ========================= */
-
-    .shop {
-      padding: 120px 5%;
-      max-width: 1500px;
-      margin: auto;
-    }
+    border-top:1px solid #e5e5e5;
+    border-bottom:1px solid #e5e5e5;
 
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      margin-bottom: 45px;
-    }
+    padding:15px 0;
+}
 
-    .section-title h2 {
-      font-size: clamp(35px, 6vw, 75px);
-      letter-spacing: -4px;
-      line-height: .9;
-    }
+.marquee-track{
+    display:inline-block;
 
-    .section-title p {
-      max-width: 300px;
-      font-size: 12px;
-      line-height: 1.7;
-      opacity: .45;
-    }
+    animation:marquee 18s linear infinite;
+}
 
-    .filters {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 35px;
-      flex-wrap: wrap;
-    }
+.marquee span{
+    margin-right:60px;
 
-    .filter {
-      background: transparent;
-      color: white;
-      border: 1px solid #333;
-      padding: 10px 18px;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: .3s;
-    }
+    font-size:10px;
+    font-weight:800;
 
-    .filter:hover,
-    .filter.active {
-      background: white;
-      color: black;
-    }
+    letter-spacing:4px;
+}
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+@keyframes marquee{
+    0%{
+        transform:translateX(0);
     }
 
-    .product {
-      background: #111;
-      position: relative;
-      cursor: pointer;
-      overflow: hidden;
+    100%{
+        transform:translateX(-50%);
     }
+}
 
-    .product-image {
-      aspect-ratio: 4 / 5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
+/* ABOUT */
 
-    .product-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(0,0,0,.3),
-        transparent 50%
-      );
-    }
+.about{
+    padding:140px 7%;
 
-    .shirt {
-      width: 63%;
-      height: 70%;
-      background: #eee;
-
-      clip-path: polygon(
-        20% 0,
-        35% 8%,
-        50% 12%,
-        65% 8%,
-        80% 0,
-        100% 25%,
-        83% 37%,
-        76% 29%,
-        76% 100%,
-        24% 100%,
-        24% 29%,
-        17% 37%,
-        0 25%
-      );
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      transition: transform .5s;
-    }
+    background:#f7f7f5;
+}
 
-    .product:hover .shirt {
-      transform: scale(1.08) rotate(-2deg);
-    }
+.about-container{
+    max-width:1200px;
 
-    .shirt.black {
-      background: #050505;
-      border: 1px solid #222;
-    }
+    margin:auto;
 
-    .shirt.cream {
-      background: #d7d0c2;
-    }
+    display:grid;
 
-    .shirt.green {
-      background: #30382d;
-    }
+    grid-template-columns:1fr 1fr;
 
-    .shirt.brown {
-      background: #4a372d;
-    }
+    gap:100px;
 
-    .shirt.blue {
-      background: #172535;
-    }
+    align-items:center;
+}
 
-    .shirt-logo {
-      font-size: 26px;
-      font-weight: 900;
-      letter-spacing: -3px;
-    }
+.about-label{
+    font-size:10px;
 
-    .shirt.black .shirt-logo,
-    .shirt.green .shirt-logo,
-    .shirt.brown .shirt-logo,
-    .shirt.blue .shirt-logo {
-      color: white;
-    }
+    font-weight:800;
 
-    .product-info {
-      padding: 17px;
-      background: #101010;
-    }
+    letter-spacing:4px;
 
-    .product-info h3 {
-      font-size: 13px;
-      margin-bottom: 7px;
-    }
+    opacity:.4;
 
-    .product-info p {
-      font-size: 11px;
-      opacity: .45;
-    }
+    margin-bottom:20px;
+}
 
-    .price {
-      margin-top: 13px;
-      font-weight: 700;
-      font-size: 13px;
-    }
+.about h2{
+    font-size:clamp(45px,6vw,80px);
 
-    .tag {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      z-index: 5;
+    line-height:.9;
 
-      background: white;
-      color: black;
+    letter-spacing:-5px;
+}
 
-      padding: 7px 10px;
+.about-text{
+    font-size:14px;
 
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
+    line-height:2;
 
-    /* =========================
-       BRAND
-    ========================= */
+    color:#555;
+}
 
-    .brand {
-      min-height: 75vh;
+.about-text p{
+    margin-bottom:20px;
+}
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+.about-box{
+    margin-top:30px;
 
-      text-align: center;
+    display:grid;
 
-      padding: 100px 20px;
+    grid-template-columns:repeat(3,1fr);
 
-      background: #f1f1ed;
-      color: #080808;
-    }
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+}
 
-    .brand-inner {
-      max-width: 900px;
-    }
+.about-stat{
+    padding:25px 10px;
 
-    .brand-logo {
-      font-size: clamp(80px, 15vw, 200px);
-      font-weight: 900;
-      letter-spacing: -12px;
-      line-height: .7;
-    }
+    border-right:1px solid #ddd;
+}
 
-    .brand h2 {
-      margin-top: 55px;
-      font-size: clamp(25px, 4vw, 55px);
-      letter-spacing: -2px;
-    }
+.about-stat:last-child{
+    border-right:0;
+}
 
-    .brand p {
-      max-width: 520px;
-      margin: 25px auto 0;
-      font-size: 13px;
-      line-height: 1.8;
-      opacity: .6;
-    }
+.about-stat strong{
+    font-size:25px;
+    display:block;
+}
 
-    /* =========================
-       LOOKBOOK
-    ========================= */
-
-    .lookbook {
-      padding: 120px 5%;
-      max-width: 1500px;
-      margin: auto;
-    }
+.about-stat span{
+    font-size:9px;
+    letter-spacing:1px;
+    opacity:.45;
+}
 
-    .lookbook-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 15px;
-    }
+/* LOOKBOOK */
 
-    .look {
-      min-height: 420px;
-      background:
-        linear-gradient(
-          135deg,
-          #151515,
-          #303030
-        );
-
-      display: flex;
-      align-items: end;
-      padding: 25px;
-
-      position: relative;
-      overflow: hidden;
-    }
+.lookbook-section{
+    padding:120px 7%;
 
-    .look:nth-child(2) {
-      min-height: 600px;
-      background: linear-gradient(145deg,#302f2c,#111);
-    }
+    display:grid;
 
-    .look:nth-child(3) {
-      background: linear-gradient(145deg,#273028,#101010);
-    }
+    grid-template-columns:.8fr 1.2fr;
 
-    .look::before {
-      content: "SNG";
-      position: absolute;
-      font-size: 150px;
-      font-weight: 900;
-      opacity: .06;
-      transform: rotate(-10deg);
-    }
+    gap:70px;
 
-    .look-content {
-      position: relative;
-      z-index: 2;
-    }
+    align-items:center;
 
-    .look-content small {
-      font-size: 9px;
-      letter-spacing: 3px;
-      opacity: .5;
-    }
+    background:#fff;
+}
 
-    .look-content h3 {
-      margin-top: 8px;
-      font-size: 24px;
-    }
+.lookbook-copy h2{
+    font-size:clamp(45px,6vw,82px);
 
-    /* =========================
-       NEWSLETTER
-    ========================= */
-
-    .newsletter {
-      padding: 120px 20px;
-      text-align: center;
-      background: #111;
-    }
+    line-height:.9;
 
-    .newsletter h2 {
-      font-size: clamp(35px, 7vw, 80px);
-      letter-spacing: -5px;
-    }
+    letter-spacing:-5px;
+}
 
-    .newsletter p {
-      margin: 20px auto 30px;
-      opacity: .5;
-      font-size: 12px;
-    }
+.lookbook-copy p{
+    margin-top:28px;
 
-    .email-box {
-      display: flex;
-      max-width: 500px;
-      margin: auto;
-    }
+    max-width:420px;
 
-    .email-box input {
-      flex: 1;
-      background: #181818;
-      border: 1px solid #333;
-      color: white;
-      padding: 16px;
-      outline: none;
-    }
+    font-size:13px;
 
-    .email-box button {
-      background: white;
-      color: black;
-      border: none;
-      padding: 0 25px;
-      font-weight: 800;
-      cursor: pointer;
-    }
+    line-height:1.9;
 
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      padding: 60px 5%;
-      border-top: 1px solid #222;
-
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
+    color:#666;
+}
 
-    footer strong {
-      font-size: 20px;
-    }
+.lookbook-section img{
+    width:100%;
 
-    footer p {
-      font-size: 11px;
-      opacity: .4;
-      margin-top: 8px;
-    }
+    display:block;
 
-    .footer-links {
-      display: flex;
-      gap: 25px;
-    }
+    transition:.5s;
+}
 
-    .footer-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 11px;
-      opacity: .5;
-    }
+.lookbook-section img:hover{
+    transform:scale(.99);
+}
 
-    /* =========================
-       CART
-    ========================= */
+/* COLLECTION */
 
-    .cart {
-      position: fixed;
-      top: 0;
-      right: -420px;
+.collection-intro{
+    display:none;
 
-      width: min(420px, 100%);
-      height: 100vh;
+    padding:130px 7% 70px;
 
-      background: #111;
-      z-index: 2000;
+    text-align:center;
+}
 
-      padding: 30px;
+.collection-intro.visible{
+    display:block;
+}
 
-      transition: .4s;
+.collection-intro h2{
+    font-size:clamp(45px,7vw,90px);
 
-      border-left: 1px solid #333;
-    }
+    letter-spacing:-5px;
+}
 
-    .cart.open {
-      right: 0;
-    }
+.collection-intro p{
+    margin:20px auto;
 
-    .cart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 40px;
-    }
+    max-width:500px;
 
-    .close-cart {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 25px;
-      cursor: pointer;
-    }
+    font-size:12px;
 
-    #cartItems {
-      max-height: 60vh;
-      overflow-y: auto;
-    }
+    line-height:1.8;
 
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #292929;
-      padding: 15px 0;
-      font-size: 12px;
-    }
+    color:#666;
+}
 
-    .cart-total {
-      margin-top: 30px;
-      display: flex;
-      justify-content: space-between;
-      font-weight: 800;
-    }
+/* SHOP */
 
-    .checkout {
-      width: 100%;
-      margin-top: 25px;
-      padding: 17px;
+.shop{
+    display:none;
 
-      background: white;
-      border: none;
-      color: black;
+    padding:30px 7% 130px;
 
-      font-weight: 900;
-      cursor: pointer;
-    }
+    max-width:1500px;
 
-    /* =========================
-       MODAL
-    ========================= */
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.8);
-      backdrop-filter: blur(12px);
-
-      display: none;
-      align-items: center;
-      justify-content: center;
-
-      z-index: 1500;
-      padding: 20px;
-    }
+    margin:auto;
+}
 
-    .modal.show {
-      display: flex;
-    }
+.shop.visible{
+    display:block;
+}
 
-    .modal-box {
-      background: #111;
-      max-width: 800px;
-      width: 100%;
+.filters{
+    display:flex;
 
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    gap:10px;
 
-      border: 1px solid #333;
-    }
+    margin-bottom:40px;
 
-    .modal-product {
-      min-height: 500px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #171717;
-    }
+    flex-wrap:wrap;
+}
 
-    .modal-info {
-      padding: 40px;
-    }
+.filter{
+    padding:10px 18px;
 
-    .modal-info h2 {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
+    background:white;
 
-    .modal-info p {
-      font-size: 12px;
-      line-height: 1.8;
-      opacity: .55;
-    }
+    border:1px solid #ddd;
 
-    .sizes {
-      display: flex;
-      gap: 8px;
-      margin: 25px 0;
-    }
+    border-radius:50px;
 
-    .size {
-      width: 45px;
-      height: 40px;
+    font-size:10px;
 
-      background: transparent;
-      border: 1px solid #333;
-      color: white;
+    font-weight:700;
 
-      cursor: pointer;
-    }
+    letter-spacing:1px;
 
-    .size.selected {
-      background: white;
-      color: black;
-    }
+    transition:.3s;
+}
 
-    .add {
-      width: 100%;
-      padding: 16px;
+.filter:hover,
+.filter.active{
+    background:#080808;
 
-      background: white;
-      color: black;
+    color:white;
 
-      border: none;
-      font-weight: 900;
+    border-color:#080808;
+}
 
-      cursor: pointer;
-    }
+/* PRODUCTS */
+
+.products{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+}
+
+.product{
+    background:#f5f5f3;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    cursor:pointer;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+}
+
+.product-image{
+    aspect-ratio:4/5;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#f1f1ef;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+}
+
+.product:hover .product-image img{
+    transform:scale(1.04);
+}
+
+.tag{
+    position:absolute;
+
+    top:15px;
+    left:15px;
+
+    background:#080808;
+
+    color:white;
+
+    padding:7px 10px;
+
+    font-size:8px;
+
+    font-weight:800;
+
+    z-index:3;
+}
+
+.product-info{
+    padding:18px;
+
+    background:white;
+}
+
+.product-info h3{
+    font-size:13px;
+
+    margin-bottom:7px;
+}
+
+.product-info p{
+    font-size:10px;
+
+    color:#777;
+}
+
+.price{
+    margin-top:12px;
+
+    font-size:12px;
+
+    font-weight:800;
+}
+
+/* MANIFESTO */
+
+.manifesto{
+    padding:160px 20px;
+
+    text-align:center;
+
+    background:#080808;
+
+    color:white;
+}
+
+.manifesto-small{
+    font-size:9px;
+
+    letter-spacing:5px;
+
+    opacity:.4;
+}
+
+.manifesto h2{
+    font-size:clamp(45px,8vw,120px);
+
+    letter-spacing:-7px;
+
+    margin-top:25px;
+}
+
+.manifesto p{
+    max-width:550px;
+
+    margin:35px auto 0;
 
-    .modal-close {
-      position: absolute;
-      top: 25px;
-      right: 30px;
-
-      background: none;
-      border: none;
-      color: white;
-      font-size: 30px;
-      cursor: pointer;
+    font-size:13px;
+
+    line-height:2;
+
+    color:#aaa;
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+    padding:130px 20px;
+
+    text-align:center;
+}
+
+.newsletter h2{
+    font-size:clamp(40px,7vw,90px);
+
+    letter-spacing:-6px;
+}
+
+.newsletter p{
+    margin:20px 0 30px;
+
+    font-size:12px;
+
+    color:#777;
+}
+
+.email-box{
+    display:flex;
+
+    max-width:500px;
+
+    margin:auto;
+}
+
+.email-box input{
+    flex:1;
+
+    padding:16px;
+
+    border:1px solid #ddd;
+
+    outline:none;
+
+    font-size:11px;
+}
+
+.email-box button{
+    background:#080808;
+
+    color:white;
+
+    border:0;
+
+    padding:0 25px;
+
+    font-size:10px;
+
+    font-weight:800;
+}
+
+/* FOOTER */
+
+footer{
+    padding:60px 7%;
+
+    border-top:1px solid #e5e5e5;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:30px;
+}
+
+footer strong{
+    font-size:20px;
+}
+
+footer p{
+    font-size:10px;
+
+    color:#777;
+
+    margin-top:7px;
+}
+
+.footer-links{
+    display:flex;
+
+    gap:25px;
+}
+
+.footer-links a{
+    color:#080808;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:600;
+}
+
+/* CART */
+
+.cart{
+    position:fixed;
+
+    top:0;
+    right:-420px;
+
+    width:min(420px,100%);
+
+    height:100vh;
+
+    background:white;
+
+    z-index:3000;
+
+    padding:30px;
+
+    transition:.4s;
+
+    box-shadow:-10px 0 40px rgba(0,0,0,.12);
+}
+
+.cart.open{
+    right:0;
+}
+
+.cart-header{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+}
+
+.cart-header h2{
+    font-size:20px;
+}
+
+.close-cart{
+    background:none;
+
+    border:0;
+
+    font-size:25px;
+}
+
+.cart-item{
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:16px 0;
+
+    border-bottom:1px solid #eee;
+
+    font-size:11px;
+}
+
+.cart-total{
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:30px;
+
+    font-weight:800;
+}
+
+.checkout{
+    width:100%;
+
+    margin-top:25px;
+
+    padding:17px;
+
+    background:#080808;
+
+    color:white;
+
+    border:0;
+
+    font-weight:800;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(255,255,255,.88);
+
+    backdrop-filter:blur(15px);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:2500;
+
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    background:white;
+
+    width:850px;
+
+    max-width:100%;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    box-shadow:0 20px 70px rgba(0,0,0,.15);
+}
+
+.modal-product{
+    min-height:500px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#f4f4f2;
+
+    overflow:hidden;
+}
+
+.modal-product img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.modal-info{
+    padding:50px;
+}
+
+.modal-info h2{
+    font-size:30px;
+
+    letter-spacing:-2px;
+}
+
+.modal-info h3{
+    margin-top:12px;
+}
+
+.modal-info p{
+    margin-top:25px;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    color:#666;
+}
+
+.sizes{
+    display:flex;
+
+    gap:8px;
+
+    margin:25px 0;
+}
+
+.size{
+    width:43px;
+
+    height:40px;
+
+    background:white;
+
+    border:1px solid #ddd;
+}
+
+.size.selected{
+    background:#080808;
+
+    color:white;
+
+    border-color:#080808;
+}
+
+.add{
+    width:100%;
+
+    padding:17px;
+
+    background:#080808;
+
+    color:white;
+
+    border:0;
+
+    font-weight:800;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
+    .lookbook-section{
+        grid-template-columns:1fr;
 
-    @media(max-width: 900px) {
+        gap:45px;
+    }
 
-      .nav-links {
-        display: none;
-      }
+    .about-container{
+        grid-template-columns:1fr;
 
-      .products {
-        grid-template-columns: repeat(2,1fr);
-      }
+        gap:50px;
+    }
 
-      .lookbook-grid {
-        grid-template-columns: 1fr;
-      }
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-      .look:nth-child(2) {
-        min-height: 420px;
-      }
+    .modal-box{
+        grid-template-columns:1fr;
 
-      .modal-box {
-        grid-template-columns: 1fr;
-        max-height: 90vh;
-        overflow-y: auto;
-      }
+        max-height:90vh;
 
-      .modal-product {
-        min-height: 300px;
-      }
+        overflow-y:auto;
+    }
 
+    .modal-product{
+        min-height:300px;
     }
+}
+
+@media(max-width:500px){
 
-    @media(max-width: 500px) {
+    .products{
+        grid-template-columns:1fr;
+    }
 
-      .products {
-        grid-template-columns: 1fr;
-      }
+    .hero h1{
+        letter-spacing:-4px;
+    }
 
-      .hero h1 {
-        letter-spacing: -5px;
-      }
+    .about-box{
+        grid-template-columns:1fr;
+    }
 
-      .hero-slogan {
-        letter-spacing: 4px;
-        font-size: 11px;
-      }
+    .about-stat{
+        border-right:0;
 
-      .email-box {
-        flex-direction: column;
-        gap: 8px;
-      }
+        border-bottom:1px solid #ddd;
+    }
 
-      .email-box button {
-        padding: 15px;
-      }
+    .email-box{
+        flex-direction:column;
 
+        gap:8px;
     }
 
-  </style>
+    .email-box button{
+        padding:16px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<!-- =========================
-     NAV
-========================= -->
+<!-- NAV -->
 
 <nav>
 
-  <div class="logo">
-    SNG<span>®</span>
-  </div>
+<div class="logo">
+SNG<span>®</span>
+</div>
 
-  <ul class="nav-links">
-    <li><a href="#shop">Shop</a></li>
-    <li><a href="#lookbook">Lookbook</a></li>
-    <li><a href="#brand">About</a></li>
-  </ul>
+<ul class="nav-links">
 
-  <button class="cart-button" onclick="openCart()">
-    BAG <span id="cartCount">0</span>
-  </button>
+<li>
+<a href="#about">ABOUT</a>
+</li>
+
+<li>
+<a href="#collection">COLLECTION</a>
+</li>
+
+<li>
+<a href="#manifesto">MESSAGE</a>
+</li>
+
+</ul>
+
+<button class="cart-button" onclick="openCart()">
+BAG <span id="cartCount">0</span>
+</button>
 
 </nav>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero">
 
-  <div class="hero-content">
+<div class="hero-logo"></div>
 
-    <div class="hero-small">
-      SNG STREETWEAR
-    </div>
+<div class="hero-content">
 
-    <h1>SNG</h1>
+<div class="hero-small">
+SNG STREETWEAR
+</div>
 
-    <div class="hero-slogan">
-      GOD STAYS NEAR
-    </div>
+<h1>
+GOD<br>
+STAYS<br>
+NEAR
+</h1>
 
-    <a href="#shop" class="hero-button">
-      SHOP COLLECTION
-    </a>
+<p class="hero-description">
 
-  </div>
+A clothing brand built around identity,
+simplicity and a message that stays with you.
+
+Every piece carries the SNG identity.
+
+</p>
+
+<button
+class="hero-button"
+onclick="showCollection()">
+
+EXPLORE COLLECTION
+
+</button>
+
+</div>
 
 </section>
 
 
-<!-- =========================
-     MARQUEE
-========================= -->
+<!-- MARQUEE -->
 
 <div class="marquee">
 
-  <div class="marquee-track">
+<div class="marquee-track">
 
-    <span>SNG</span>
-    <span>GOD STAYS NEAR</span>
-    <span>NEW DROP</span>
-    <span>SNG STREETWEAR</span>
-    <span>GOD STAYS NEAR</span>
-    <span>NEW DROP</span>
+<span>SNG</span>
+<span>GOD STAYS NEAR</span>
+<span>STAY CLOSE</span>
+<span>SNG STREETWEAR</span>
+<span>GOD STAYS NEAR</span>
+<span>MOVE DIFFERENT</span>
 
-    <span>SNG</span>
-    <span>GOD STAYS NEAR</span>
-    <span>NEW DROP</span>
-    <span>SNG STREETWEAR</span>
-    <span>GOD STAYS NEAR</span>
-    <span>NEW DROP</span>
+<span>SNG</span>
+<span>GOD STAYS NEAR</span>
+<span>STAY CLOSE</span>
+<span>SNG STREETWEAR</span>
+<span>GOD STAYS NEAR</span>
+<span>MOVE DIFFERENT</span>
 
-  </div>
+</div>
 
 </div>
 
 
-<!-- =========================
-     SHOP
-========================= -->
+<!-- ABOUT -->
 
-<section class="shop" id="shop">
+<section class="about" id="about">
 
-  <div class="section-title">
+<div class="about-container">
 
-    <div>
-      <div style="font-size:10px;opacity:.4;letter-spacing:3px;margin-bottom:15px;">
-        COLLECTION 01
-      </div>
+<div>
 
-      <h2>THE<br>DROP.</h2>
-    </div>
+<div class="about-label">
+WHO WE ARE
+</div>
 
-    <p>
-      Designed for those who move differently.
-      Minimal pieces. Strong identity.
-    </p>
+<h2>
+MORE THAN<br>
+CLOTHING.
+</h2>
 
-  </div>
+</div>
 
+<div class="about-text">
 
-  <div class="filters">
+<p>
 
-    <button class="filter active" onclick="filterProducts('all',this)">
-      All
-    </button>
+SNG is an independent streetwear concept
+built around one simple message:
 
-    <button class="filter" onclick="filterProducts('shirts',this)">
-      T-Shirts
-    </button>
+<strong>GOD STAYS NEAR.</strong>
 
-    <button class="filter" onclick="filterProducts('hoodies',this)">
-      Hoodies
-    </button>
+</p>
 
-    <button class="filter" onclick="filterProducts('pants',this)">
-      Pants
-    </button>
+<p>
 
-    <button class="filter" onclick="filterProducts('caps',this)">
-      Caps
-    </button>
+Our goal is to create clothing that feels
+clean, modern and different while keeping
+a strong identity behind every piece.
 
-  </div>
+</p>
 
+<p>
 
-  <div class="products">
+From everyday T-shirts to hoodies,
+pants, shorts and accessories,
+every collection is designed to carry
+the SNG identity.
 
+</p>
 
-    <!-- PRODUCT 1 -->
+<div class="about-box">
 
-    <article class="product" data-category="shirts"
-      onclick="openProduct('SNG Essential Tee',29.99,'white')">
+<div class="about-stat">
+<strong>01</strong>
+<span>IDENTITY</span>
+</div>
 
-      <div class="product-image">
+<div class="about-stat">
+<strong>02</strong>
+<span>DESIGN</span>
+</div>
 
-        <span class="tag">NEW</span>
+<div class="about-stat">
+<strong>03</strong>
+<span>MESSAGE</span>
+</div>
 
-        <div class="shirt">
-          <div class="shirt-logo">SNG</div>
-        </div>
+</div>
 
-      </div>
+</div>
 
-      <div class="product-info">
-
-        <h3>SNG Essential Tee</h3>
-
-        <p>White / Cotton</p>
-
-        <div class="price">29,99 €</div>
-
-      </div>
-
-    </article>
-
-
-    <!-- PRODUCT 2 -->
-
-    <article class="product" data-category="shirts"
-      onclick="openProduct('SNG Blackout Tee',29.99,'black')">
-
-      <div class="product-image">
-
-        <div class="shirt black">
-          <div class="shirt-logo">SNG</div>
-        </div>
-
-      </div>
-
-      <div class="product-info">
-
-        <h3>SNG Blackout Tee</h3>
-
-        <p>Black / Heavy Cotton</p>
-
-        <div class="price">29,99 €</div>
-
-      </div>
-
-    </article>
-
-
-    <!-- PRODUCT 3 -->
-
-    <article class="product" data-category="shirts"
-      onclick="openProduct('SNG Olive Tee',34.99,'green')">
-
-      <div class="product-image">
-
-        <span class="tag">DROP</span>
-
-        <div class="shirt green">
-          <div class="shirt-logo">SNG</div>
-        </div>
-
-      </div>
-
-      <div class="product-info">
-
-        <h3>SNG Olive Tee</h3>
-
-        <p>Olive / Oversized</p>
-
-        <div class="price">34,99 €</div>
-
-      </div>
-
-    </article>
-
-
-    <!-- PRODUCT 4 -->
-
-    <article class="product" data-category="hoodies"
-      onclick="openProduct('GOD STAYS NEAR Hoodie',59.99,'black')">
-
-      <div class="product-image">
-
-        <span class="tag">BESTSELLER</span>
-
-        <div class="shirt black" style="height:75%;width:70%;">
-          <div class="shirt-logo">SNG</div>
-        </div>
-
-      </div>
-
-      <div class="product-info">
-
-        <h3>GOD STAYS NEAR Hoodie</h3>
-
-        <p>Black / Oversized</p>
-
-        <div class="price">59,99 €</div>
-
-      </div>
-
-    </article>
-
-
-    <!-- PRODUCT 5 -->
-
-    <article class="product" data-category="hoodies"
-      onclick="openProduct('SNG Brown Hoodie',59.99,'brown')">
-
-      <div class="product-image">
-
-        <div class="shirt brown" style="height:75%;width:70%;">
-          <div class="shirt-logo">SNG</div>
-        </div>
-
-      </div>
-
-      <div class="product-info">
-
-        <h3>SNG Brown Hoodie</h3>
-
-        <p>Brown / Heavyweight</p>
-
-        <div class="price">59,99 €</div>
-
-      </div>
-
-    </article>
-
-
-    <!-- PRODUCT 6 -->
-
-    <article class="product" data-category="pants"
-      onclick="openProduct('SNG Cargo Pants',64.99,'black')">
-
-      <div class="product-image">
-
-        <div class="shirt black"
-             style="height:75%;width:48%;clip-path:none;border-radius:10px;">
-          <div class="shirt-logo">SNG</div>
-        </div>
-
-      </div>
-
-      <div class="product-info">
-
-        <h3>SNG Cargo Pants</h3>
-
-        <p>Black / Utility</p>
-
-        <div class="price">64,99 €</div>
-
-      </div>
-
-    </article>
-
-
-    <!-- PRODUCT 7 -->
-
-    <article class="product" data-category="pants"
-      onclick="openProduct('SNG Summer Shorts',39.99,'blue')">
-
-      <div class="product-image">
-
-        <div class="shirt blue"
-             style="height:45%;width:65%;clip-path:none;border-radius:8px;">
-          <div class="shirt-logo">SNG</div>
-        </div>
-
-      </div>
-
-      <div class="product-info">
-
-        <h3>SNG Summer Shorts</h3>
-
-        <p>Navy / Relaxed</p>
-
-        <div class="price">39,99 €</div>
-
-      </div>
-
-    </article>
-
-
-    <!-- PRODUCT 8 -->
-
-    <article class="product" data-category="caps"
-      onclick="openProduct('SNG Signature Cap',24.99,'black')">
-
-      <div class="product-image">
-
-        <div style="
-          width:65%;
-          height:35%;
-          background:#050505;
-          border-radius:80px 80px 15px 15px;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          font-weight:900;
-          font-size:28px;
-        ">
-          SNG
-        </div>
-
-      </div>
-
-      <div class="product-info">
-
-        <h3>SNG Signature Cap</h3>
-
-        <p>Black / Embroidered</p>
-
-        <div class="price">24,99 €</div>
-
-      </div>
-
-    </article>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- =========================
-     BRAND
-========================= -->
+<!-- LOOKBOOK -->
 
-<section class="brand" id="brand">
+<section class="lookbook-section">
 
-  <div class="brand-inner">
+<div class="lookbook-copy">
 
-    <div class="brand-logo">
-      SNG
-    </div>
+<div class="about-label">
+SNG COLLECTION
+</div>
 
-    <h2>
-      GOD STAYS NEAR.
-    </h2>
+<h2>
+BUILT TO<br>
+BE WORN.
+</h2>
 
-    <p>
-      SNG is more than clothing.
-      It's a reminder to stay close to what matters.
-      Clean silhouettes, strong details and a message
-      that goes beyond the clothes.
-    </p>
+<p>
 
-  </div>
+Every piece is part of the same message.
+Clean silhouettes, strong graphics and
+the SNG identity.
 
-</section>
+<strong>GOD STAYS NEAR.</strong>
 
+</p>
 
-<!-- =========================
-     LOOKBOOK
-========================= -->
+</div>
 
-<section class="lookbook" id="lookbook">
-
-  <div class="section-title">
-
-    <div>
-      <div style="font-size:10px;opacity:.4;letter-spacing:3px;margin-bottom:15px;">
-        SNG WORLD
-      </div>
-
-      <h2>LOOK<br>BOOK.</h2>
-    </div>
-
-  </div>
-
-
-  <div class="lookbook-grid">
-
-    <div class="look">
-
-      <div class="look-content">
-
-        <small>SNG / 001</small>
-
-        <h3>STAY<br>NEAR.</h3>
-
-      </div>
-
-    </div>
-
-
-    <div class="look">
-
-      <div class="look-content">
-
-        <small>SNG / 002</small>
-
-        <h3>MOVE<br>DIFFERENT.</h3>
-
-      </div>
-
-    </div>
-
-
-    <div class="look">
-
-      <div class="look-content">
-
-        <small>SNG / 003</small>
-
-        <h3>GOD<br>STAYS NEAR.</h3>
-
-      </div>
-
-    </div>
-
-  </div>
+<img
+src="images/lookbook.jpg"
+alt="SNG Collection Lookbook">
 
 </section>
 
 
-<!-- =========================
-     NEWSLETTER
-========================= -->
+<!-- COLLECTION -->
+
+<section
+class="collection-intro"
+id="collection">
+
+<div class="about-label">
+SNG COLLECTION 01
+</div>
+
+<h2>
+THE DROP.
+</h2>
+
+<p>
+
+Explore the SNG collection.
+
+T-shirts, hoodies, pants,
+shorts and accessories.
+
+</p>
+
+</section>
+
+
+<!-- SHOP -->
+
+<section class="shop">
+
+<div class="filters">
+
+<button
+class="filter active"
+onclick="filterProducts('all',this)">
+ALL
+</button>
+
+<button
+class="filter"
+onclick="filterProducts('shirts',this)">
+T-SHIRTS
+</button>
+
+<button
+class="filter"
+onclick="filterProducts('hoodies',this)">
+HOODIES
+</button>
+
+<button
+class="filter"
+onclick="filterProducts('pants',this)">
+PANTS
+</button>
+
+<button
+class="filter"
+onclick="filterProducts('shorts',this)">
+SHORTS
+</button>
+
+<button
+class="filter"
+onclick="filterProducts('caps',this)">
+CAPS
+</button>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- T-SHIRTS -->
+
+<article
+class="product"
+data-category="shirts"
+onclick="openProduct(
+'SNG White Tee',
+29.99,
+'images/tee-white.jpg'
+)">
+
+<div class="product-image">
+
+<span class="tag">
+NEW
+</span>
+
+<img
+src="images/tee-white.jpg"
+alt="SNG White Tee">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG White Tee</h3>
+
+<p>White / SNG Graphic</p>
+
+<div class="price">
+29,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="shirts"
+onclick="openProduct(
+'SNG Black Tee',
+29.99,
+'images/tee-black.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/tee-black.jpg"
+alt="SNG Black Tee">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Black Tee</h3>
+
+<p>Black / SNG Graphic</p>
+
+<div class="price">
+29,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="shirts"
+onclick="openProduct(
+'SNG Olive Tee',
+34.99,
+'images/tee-green.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/tee-green.jpg"
+alt="SNG Olive Tee">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Olive Tee</h3>
+
+<p>Olive / Oversized</p>
+
+<div class="price">
+34,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="shirts"
+onclick="openProduct(
+'SNG Cream Tee',
+34.99,
+'images/tee-cream.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/tee-cream.jpg"
+alt="SNG Cream Tee">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Cream Tee</h3>
+
+<p>Cream / God Stays Near</p>
+
+<div class="price">
+34,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<!-- HOODIES -->
+
+<article
+class="product"
+data-category="hoodies"
+onclick="openProduct(
+'SNG Black Hoodie',
+64.99,
+'images/hoodie-black.jpg'
+)">
+
+<div class="product-image">
+
+<span class="tag">
+BESTSELLER
+</span>
+
+<img
+src="images/hoodie-black.jpg"
+alt="SNG Black Hoodie">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Black Hoodie</h3>
+
+<p>Black / Oversized</p>
+
+<div class="price">
+64,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="hoodies"
+onclick="openProduct(
+'SNG Grey Hoodie',
+64.99,
+'images/hoodie-grey.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/hoodie-grey.jpg"
+alt="SNG Grey Hoodie">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Grey Hoodie</h3>
+
+<p>Grey / Oversized</p>
+
+<div class="price">
+64,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="hoodies"
+onclick="openProduct(
+'SNG Brown Hoodie',
+64.99,
+'images/hoodie-brown.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/hoodie-brown.jpg"
+alt="SNG Brown Hoodie">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Brown Hoodie</h3>
+
+<p>Brown / Heavyweight</p>
+
+<div class="price">
+64,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="hoodies"
+onclick="openProduct(
+'God Stays Near Hoodie',
+64.99,
+'images/hoodie-cream.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/hoodie-cream.jpg"
+alt="God Stays Near Hoodie">
+
+</div>
+
+<div class="product-info">
+
+<h3>God Stays Near Hoodie</h3>
+
+<p>Cream / Statement</p>
+
+<div class="price">
+64,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="hoodies"
+onclick="openProduct(
+'SNG Prayer Hoodie',
+64.99,
+'images/hoodie-prayer.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/hoodie-prayer.jpg"
+alt="SNG Prayer Hoodie">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Prayer Hoodie</h3>
+
+<p>Black / Prayer Graphic</p>
+
+<div class="price">
+64,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PANTS -->
+
+<article
+class="product"
+data-category="pants"
+onclick="openProduct(
+'SNG Black Pants',
+64.99,
+'images/pants-black.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/pants-black.jpg"
+alt="SNG Black Pants">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Black Pants</h3>
+
+<p>Black / Relaxed</p>
+
+<div class="price">
+64,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="pants"
+onclick="openProduct(
+'SNG Grey Pants',
+64.99,
+'images/pants-grey.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/pants-grey.jpg"
+alt="SNG Grey Pants">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Grey Pants</h3>
+
+<p>Grey / Relaxed</p>
+
+<div class="price">
+64,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="pants"
+onclick="openProduct(
+'SNG Cargo Green',
+69.99,
+'images/cargo-green.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/cargo-green.jpg"
+alt="SNG Cargo Green">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Cargo Green</h3>
+
+<p>Olive / Utility</p>
+
+<div class="price">
+69,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="pants"
+onclick="openProduct(
+'SNG Cargo Black',
+69.99,
+'images/cargo-black.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/cargo-black.jpg"
+alt="SNG Cargo Black">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Cargo Black</h3>
+
+<p>Black / Utility</p>
+
+<div class="price">
+69,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<!-- SHORTS -->
+
+<article
+class="product"
+data-category="shorts"
+onclick="openProduct(
+'SNG Black Shorts',
+39.99,
+'images/shorts-black.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/shorts-black.jpg"
+alt="SNG Black Shorts">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Black Shorts</h3>
+
+<p>Black / Relaxed</p>
+
+<div class="price">
+39,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="shorts"
+onclick="openProduct(
+'SNG Grey Shorts',
+39.99,
+'images/shorts-grey.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/shorts-grey.jpg"
+alt="SNG Grey Shorts">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Grey Shorts</h3>
+
+<p>Grey / Relaxed</p>
+
+<div class="price">
+39,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="shorts"
+onclick="openProduct(
+'SNG Olive Shorts',
+39.99,
+'images/shorts-green.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/shorts-green.jpg"
+alt="SNG Olive Shorts">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Olive Shorts</h3>
+
+<p>Olive / Relaxed</p>
+
+<div class="price">
+39,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="shorts"
+onclick="openProduct(
+'SNG Cream Shorts',
+39.99,
+'images/shorts-cream.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/shorts-cream.jpg"
+alt="SNG Cream Shorts">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Cream Shorts</h3>
+
+<p>Cream / Relaxed</p>
+
+<div class="price">
+39,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<!-- CAPS -->
+
+<article
+class="product"
+data-category="caps"
+onclick="openProduct(
+'SNG Signature Cap',
+24.99,
+'images/cap-black.jpg'
+)">
+
+<div class="product-image">
+
+<span class="tag">
+ACCESSORY
+</span>
+
+<img
+src="images/cap-black.jpg"
+alt="SNG Black Cap">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Signature Cap</h3>
+
+<p>Black / Embroidered</p>
+
+<div class="price">
+24,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="caps"
+onclick="openProduct(
+'SNG Cream Cap',
+24.99,
+'images/cap-cream.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/cap-cream.jpg"
+alt="SNG Cream Cap">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Cream Cap</h3>
+
+<p>Cream / Embroidered</p>
+
+<div class="price">
+24,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="caps"
+onclick="openProduct(
+'SNG Olive Cap',
+24.99,
+'images/cap-green.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/cap-green.jpg"
+alt="SNG Olive Cap">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Olive Cap</h3>
+
+<p>Olive / Embroidered</p>
+
+<div class="price">
+24,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="caps"
+onclick="openProduct(
+'SNG Navy Cap',
+24.99,
+'images/cap-navy.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/cap-navy.jpg"
+alt="SNG Navy Cap">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Navy Cap</h3>
+
+<p>Navy / Embroidered</p>
+
+<div class="price">
+24,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="caps"
+onclick="openProduct(
+'SNG Charcoal Cap',
+24.99,
+'images/cap-charcoal.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/cap-charcoal.jpg"
+alt="SNG Charcoal Cap">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Charcoal Cap</h3>
+
+<p>Charcoal / Embroidered</p>
+
+<div class="price">
+24,99 €
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="product"
+data-category="caps"
+onclick="openProduct(
+'SNG Brown Cap',
+24.99,
+'images/cap-brown.jpg'
+)">
+
+<div class="product-image">
+
+<img
+src="images/cap-brown.jpg"
+alt="SNG Brown Cap">
+
+</div>
+
+<div class="product-info">
+
+<h3>SNG Brown Cap</h3>
+
+<p>Brown / Embroidered</p>
+
+<div class="price">
+24,99 €
+</div>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- MANIFESTO -->
+
+<section class="manifesto" id="manifesto">
+
+<div class="manifesto-small">
+THE SNG MESSAGE
+</div>
+
+<h2>
+GOD STAYS NEAR.
+</h2>
+
+<p>
+
+SNG represents a reminder to stay close
+to what matters.
+
+No matter where you go,
+what you wear or what comes next,
+
+<strong>GOD STAYS NEAR.</strong>
+
+</p>
+
+</section>
+
+
+<!-- NEWSLETTER -->
 
 <section class="newsletter">
 
-  <h2>STAY NEAR.</h2>
+<h2>
+STAY NEAR.
+</h2>
 
-  <p>
-    Be the first to know about new drops.
-  </p>
+<p>
+Join the SNG community and discover new drops first.
+</p>
 
-  <form class="email-box"
-        onsubmit="subscribe(event)">
+<form
+class="email-box"
+onsubmit="subscribe(event)">
 
-    <input
-      type="email"
-      placeholder="YOUR EMAIL"
-      required
-    >
+<input
+type="email"
+placeholder="YOUR EMAIL"
+required>
 
-    <button>
-      JOIN SNG
-    </button>
+<button>
+JOIN SNG
+</button>
 
-  </form>
+</form>
 
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
-  <div>
+<div>
 
-    <strong>SNG®</strong>
+<strong>SNG®</strong>
 
-    <p>
-      GOD STAYS NEAR.
-    </p>
+<p>
+GOD STAYS NEAR.
+</p>
 
-  </div>
+</div>
 
-  <div class="footer-links">
+<div class="footer-links">
 
-    <a href="#">Instagram</a>
-    <a href="#">TikTok</a>
-    <a href="#">Contact</a>
+<a href="#">
+Instagram
+</a>
 
-  </div>
+<a href="#">
+TikTok
+</a>
+
+<a href="#">
+Contact
+</a>
+
+</div>
 
 </footer>
 
 
-<!-- =========================
-     CART
-========================= -->
+<!-- CART -->
 
-<aside class="cart" id="cart">
+<aside
+class="cart"
+id="cart">
 
-  <div class="cart-header">
+<div class="cart-header">
 
-    <h2>YOUR BAG</h2>
+<h2>
+YOUR BAG
+</h2>
 
-    <button
-      class="close-cart"
-      onclick="closeCart()">
-      ×
-    </button>
+<button
+class="close-cart"
+onclick="closeCart()">
+×
+</button>
 
-  </div>
+</div>
 
+<div id="cartItems">
 
-  <div id="cartItems">
+<p style="color:#777;font-size:12px;">
+Your bag is empty.
+</p>
 
-    <p style="opacity:.4;font-size:12px;">
-      Your bag is empty.
-    </p>
+</div>
 
-  </div>
+<div class="cart-total">
 
+<span>
+TOTAL
+</span>
 
-  <div class="cart-total">
+<span id="cartTotal">
+0,00 €
+</span>
 
-    <span>TOTAL</span>
+</div>
 
-    <span id="cartTotal">
-      0,00 €
-    </span>
+<button
+class="checkout"
+onclick="checkout()">
 
-  </div>
+CHECKOUT
 
-
-  <button class="checkout"
-          onclick="checkout()">
-
-    CHECKOUT
-
-  </button>
+</button>
 
 </aside>
 
 
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
+<!-- PRODUCT MODAL -->
 
-<div class="modal" id="modal">
+<div
+class="modal"
+id="modal">
 
-  <button
-    class="modal-close"
-    onclick="closeProduct()">
-    ×
-  </button>
+<div class="modal-box">
 
+<div class="modal-product">
 
-  <div class="modal-box">
+<img
+id="modalImage"
+src=""
+alt="SNG Product">
 
-    <div class="modal-product">
+</div>
 
-      <div id="modalShirt"
-           class="shirt"
-           style="width:65%;height:70%;">
+<div class="modal-info">
 
-        <div class="shirt-logo">
-          SNG
-        </div>
+<h2 id="modalName">
+SNG
+</h2>
 
-      </div>
+<h3 id="modalPrice">
+29,99 €
+</h3>
 
-    </div>
+<p>
 
+A piece from the SNG collection.
 
-    <div class="modal-info">
+Designed around the message
 
-      <h2 id="modalName">
-        SNG
-      </h2>
+<strong>GOD STAYS NEAR.</strong>
 
-      <h3 id="modalPrice">
-        29,99 €
-      </h3>
+</p>
 
-      <p style="margin-top:20px;">
-        SNG streetwear.
-        Designed with a minimal identity and
-        the message GOD STAYS NEAR.
-      </p>
+<div class="sizes">
 
+<button
+class="size"
+onclick="selectSize(this)">
+XS
+</button>
 
-      <div class="sizes">
+<button
+class="size"
+onclick="selectSize(this)">
+S
+</button>
 
-        <button class="size"
-          onclick="selectSize(this)">
-          XS
-        </button>
+<button
+class="size selected"
+onclick="selectSize(this)">
+M
+</button>
 
-        <button class="size"
-          onclick="selectSize(this)">
-          S
-        </button>
+<button
+class="size"
+onclick="selectSize(this)">
+L
+</button>
 
-        <button class="size"
-          onclick="selectSize(this)">
-          M
-        </button>
+<button
+class="size"
+onclick="selectSize(this)">
+XL
+</button>
 
-        <button class="size"
-          onclick="selectSize(this)">
-          L
-        </button>
+</div>
 
-        <button class="size"
-          onclick="selectSize(this)">
-          XL
-        </button>
+<button
+class="add"
+onclick="addToCart()">
 
-      </div>
+ADD TO BAG
 
+</button>
 
-      <button
-        class="add"
-        onclick="addToCart()">
+</div>
 
-        ADD TO BAG
-
-      </button>
-
-    </div>
-
-  </div>
+</div>
 
 </div>
 
 
 <script>
 
-  /* =========================
-     CART
-  ========================= */
+let cart=[];
 
-  let cart = [];
+let currentProduct=null;
 
-  let currentProduct = null;
+let selectedSize="M";
 
-  let selectedSize = "M";
 
+/* SHOW COLLECTION */
 
-  function openCart() {
+function showCollection(){
 
-    document
-      .getElementById("cart")
-      .classList.add("open");
+document
+.querySelector(".collection-intro")
+.classList.add("visible");
 
-  }
+document
+.querySelector(".shop")
+.classList.add("visible");
 
+setTimeout(()=>{
 
-  function closeCart() {
+document
+.querySelector(".collection-intro")
+.scrollIntoView({
+behavior:"smooth"
+});
 
-    document
-      .getElementById("cart")
-      .classList.remove("open");
+},100);
 
-  }
+}
 
 
-  function updateCart() {
+/* CART */
 
-    const container =
-      document.getElementById("cartItems");
+function openCart(){
 
-    const count =
-      document.getElementById("cartCount");
+document
+.getElementById("cart")
+.classList.add("open");
 
-    const total =
-      document.getElementById("cartTotal");
+}
 
+function closeCart(){
 
-    count.innerText = cart.length;
+document
+.getElementById("cart")
+.classList.remove("open");
 
+}
 
-    if(cart.length === 0){
 
-      container.innerHTML =
-        `<p style="opacity:.4;font-size:12px;">
-          Your bag is empty.
-        </p>`;
+/* PRODUCT */
 
-      total.innerText = "0,00 €";
+function openProduct(name,price,image){
 
-      return;
+currentProduct={
+name:name,
+price:price,
+image:image
+};
 
-    }
+document
+.getElementById("modalName")
+.innerText=name;
 
+document
+.getElementById("modalPrice")
+.innerText=
+price.toFixed(2)
+.replace(".",",")+" €";
 
-    let totalPrice = 0;
+document
+.getElementById("modalImage")
+.src=image;
 
+document
+.getElementById("modal")
+.classList.add("show");
 
-    container.innerHTML = cart.map((item,index)=>{
+}
 
-      totalPrice += item.price;
 
-      return `
-        <div class="cart-item">
+function closeProduct(){
 
-          <div>
+document
+.getElementById("modal")
+.classList.remove("show");
 
-            <strong>
-              ${item.name}
-            </strong>
+}
 
-            <br>
 
-            <span style="opacity:.4">
-              Size ${item.size}
-            </span>
+/* SIZE */
 
-          </div>
+function selectSize(button){
 
-          <div>
+document
+.querySelectorAll(".size")
+.forEach(b=>{
+b.classList.remove("selected");
+});
 
-            ${item.price.toFixed(2)} €
+button.classList.add("selected");
 
-            <button
-              onclick="removeItem(${index})"
-              style="
-                background:none;
-                border:none;
-                color:#777;
-                cursor:pointer;
-                margin-left:10px;
-              ">
-              ×
-            </button>
+selectedSize=button.innerText;
 
-          </div>
+}
 
-        </div>
-      `;
 
-    }).join("");
+/* ADD TO CART */
 
+function addToCart(){
 
-    total.innerText =
-      totalPrice.toFixed(2).replace(".",",") + " €";
+if(!currentProduct){
+return;
+}
 
-  }
+cart.push({
 
+name:currentProduct.name,
 
-  function removeItem(index){
+price:currentProduct.price,
 
-    cart.splice(index,1);
+size:selectedSize
 
-    updateCart();
+});
 
-  }
+updateCart();
 
+closeProduct();
 
-  /* =========================
-     PRODUCT MODAL
-  ========================= */
+openCart();
 
-  function openProduct(name,price,color){
+}
 
-    currentProduct = {
-      name:name,
-      price:price,
-      color:color
-    };
 
+/* REMOVE */
 
-    document
-      .getElementById("modalName")
-      .innerText = name;
+function removeItem(index){
 
+cart.splice(index,1);
 
-    document
-      .getElementById("modalPrice")
-      .innerText =
-      price.toFixed(2).replace(".",",") + " €";
+updateCart();
 
+}
 
-    const shirt =
-      document.getElementById("modalShirt");
 
+/* UPDATE CART */
 
-    shirt.className =
-      "shirt " + color;
+function updateCart(){
 
+const items=
+document.getElementById("cartItems");
 
-    document
-      .getElementById("modal")
-      .classList.add("show");
+const count=
+document.getElementById("cartCount");
 
-  }
+const total=
+document.getElementById("cartTotal");
 
+count.innerText=cart.length;
 
-  function closeProduct(){
 
-    document
-      .getElementById("modal")
-      .classList.remove("show");
+if(cart.length===0){
 
-  }
+items.innerHTML=`
 
+<p style="color:#777;font-size:12px;">
+Your bag is empty.
+</p>
 
-  function selectSize(button){
+`;
 
-    document
-      .querySelectorAll(".size")
-      .forEach(b =>
-        b.classList.remove("selected")
-      );
+total.innerText="0,00 €";
 
+return;
 
-    button.classList.add("selected");
+}
 
-    selectedSize =
-      button.innerText;
 
-  }
+let totalPrice=0;
 
 
-  function addToCart(){
+items.innerHTML=
+cart.map((item,index)=>{
 
-    if(!currentProduct) return;
+totalPrice+=item.price;
 
+return `
 
-    cart.push({
+<div class="cart-item">
 
-      name: currentProduct.name,
+<div>
 
-      price: currentProduct.price,
+<strong>
+${item.name}
+</strong>
 
-      size: selectedSize
+<br>
 
-    });
+<span style="color:#777">
+Size ${item.size}
+</span>
 
+</div>
 
-    updateCart();
+<div>
 
-    closeProduct();
+${item.price.toFixed(2)} €
 
-    openCart();
+<button
+onclick="removeItem(${index})"
+style="
+border:0;
+background:none;
+margin-left:8px;
+cursor:pointer;
+">
 
-  }
+×
+</button>
 
+</div>
 
-  /* =========================
-     FILTERS
-  ========================= */
+</div>
 
-  function filterProducts(category,button){
+`;
 
-    document
-      .querySelectorAll(".filter")
-      .forEach(b =>
-        b.classList.remove("active")
-      );
+}).join("");
 
 
-    button.classList.add("active");
+total.innerText=
+totalPrice
+.toFixed(2)
+.replace(".",",")+" €";
 
+}
 
-    document
-      .querySelectorAll(".product")
-      .forEach(product => {
 
-        if(
-          category === "all" ||
-          product.dataset.category === category
-        ){
+/* FILTER */
 
-          product.style.display = "";
+function filterProducts(category,button){
 
-        }else{
+document
+.querySelectorAll(".filter")
+.forEach(b=>{
+b.classList.remove("active");
+});
 
-          product.style.display = "none";
+button.classList.add("active");
 
-        }
 
-      });
+document
+.querySelectorAll(".product")
+.forEach(product=>{
 
-  }
+if(
+category==="all" ||
+product.dataset.category===category
+){
 
+product.style.display="";
 
-  /* =========================
-     CHECKOUT
-  ========================= */
+}else{
 
-  function checkout(){
+product.style.display="none";
 
-    if(cart.length === 0){
+}
 
-      alert("Tu carrito está vacío.");
+});
 
-      return;
+}
 
-    }
 
+/* CHECKOUT */
 
-    alert(
-      "Aquí conectaríamos tu sistema de pago."
-    );
+function checkout(){
 
-  }
+if(cart.length===0){
 
+alert("Your bag is empty.");
 
-  /* =========================
-     NEWSLETTER
-  ========================= */
+return;
 
-  function subscribe(event){
+}
 
-    event.preventDefault();
+alert(
+"Checkout will be connected to your payment system."
+);
 
-    alert(
-      "¡Bienvenido a SNG! GOD STAYS NEAR."
-    );
+}
 
-  }
 
+/* NEWSLETTER */
 
-  /* =========================
-     ESCAPE
-  ========================= */
+function subscribe(event){
 
-  document.addEventListener(
-    "keydown",
-    function(event){
+event.preventDefault();
 
-      if(event.key === "Escape"){
+alert(
+"Welcome to SNG. GOD STAYS NEAR."
+);
 
-        closeProduct();
+}
 
-        closeCart();
 
-      }
+/* ESC */
 
-    }
-  );
+document.addEventListener(
+"keydown",
+event=>{
 
+if(event.key==="Escape"){
 
-  updateCart();
+closeProduct();
+
+closeCart();
+
+}
+
+});
+
+
+/* CLICK OUTSIDE MODAL */
+
+document
+.getElementById("modal")
+.addEventListener("click",e=>{
+
+if(e.target.id==="modal"){
+
+closeProduct();
+
+}
+
+});
 
 </script>
 
