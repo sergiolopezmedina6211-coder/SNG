@@ -1,2194 +1,1609 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SNG — GOD STAYS NEAR</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 *{
-box-sizing:border-box;
-margin:0;
-padding:0
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Inter,Arial,sans-serif;
-background:#fff;
-color:#080808
+    font-family:Arial,Helvetica,sans-serif;
+    background:#fff;
+    color:#000;
 }
 
-button,input{
-font:inherit
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
 button{
-cursor:pointer
+    cursor:pointer;
 }
 
-/* =========================
-   NAV
-========================= */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    border-bottom:1px solid #ddd;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 25px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:900;
+    font-size:25px;
+    letter-spacing:4px;
+}
+
+.logo img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+}
 
 nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:72px;
-z-index:50;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:0 5%;
-
-background:rgba(255,255,255,.88);
-backdrop-filter:blur(18px);
-
-border-bottom:1px solid #eee
+    display:flex;
+    gap:30px;
 }
 
-.brand{
-font-size:24px;
-font-weight:900;
-letter-spacing:-2px
+nav a{
+    font-size:13px;
+    font-weight:bold;
+    transition:.2s;
 }
 
-.brand span{
-font-size:9px;
-vertical-align:top;
-margin-left:2px
+nav a:hover{
+    opacity:.5;
 }
 
-.navlinks{
-display:flex;
-gap:28px;
-list-style:none
+.cart-button{
+    background:#000;
+    color:#fff;
+    border:0;
+    padding:12px 18px;
+    font-weight:bold;
 }
-
-.navlinks a{
-font-size:10px;
-font-weight:800;
-letter-spacing:1.5px;
-text-decoration:none;
-color:#111
-}
-
-.navlinks a:hover{
-opacity:.45
-}
-
-.bag{
-border:0;
-background:#080808;
-color:#fff;
-border-radius:999px;
-padding:11px 16px;
-font-size:10px;
-font-weight:800
-}
-
-
-/* =========================
-   HERO
-========================= */
 
 .hero{
-min-height:100vh;
-
-position:relative;
-
-display:grid;
-place-items:center;
-
-overflow:hidden;
-
-background:#fff;
-
-text-align:center;
-
-padding:100px 20px 60px
+    min-height:650px;
+    background:#000;
+    color:#fff;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    padding:70px 8%;
+    gap:50px;
 }
 
-/* LOGO GRANDE DETRÁS */
-
-.hero:before{
-content:"";
-
-position:absolute;
-
-inset:5%;
-
-background:url('images/logo.png') center/contain no-repeat;
-
-opacity:.12;
-
-filter:grayscale(1);
-
-z-index:0
-}
-
-/* LUZ SOBRE EL LOGO */
-
-.hero:after{
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-radial-gradient(
-circle,
-transparent 10%,
-rgba(255,255,255,.72) 75%
-);
-
-z-index:1
-}
-
-.hero-content{
-position:relative;
-
-z-index:2;
-
-max-width:850px
-}
-
-.eyebrow{
-font-size:9px;
-
-letter-spacing:6px;
-
-font-weight:800;
-
-opacity:.45;
-
-margin-bottom:24px
+.hero-text small{
+    border:1px solid #fff;
+    padding:9px 14px;
+    font-weight:bold;
+    letter-spacing:2px;
 }
 
 .hero h1{
-font-size:clamp(58px,10vw,128px);
+    font-size:clamp(80px,12vw,150px);
+    line-height:.8;
+    margin-top:30px;
+    letter-spacing:-8px;
+}
 
-line-height:.86;
-
-letter-spacing:-7px;
-
-font-weight:900
+.hero h2{
+    font-size:35px;
+    letter-spacing:4px;
+    margin-top:30px;
 }
 
 .hero p{
-max-width:540px;
-
-margin:30px auto 0;
-
-font-size:13px;
-
-line-height:1.8;
-
-color:#555
+    max-width:500px;
+    margin-top:20px;
+    color:#ccc;
+    line-height:1.7;
 }
 
-.hero-actions{
-display:flex;
-
-gap:10px;
-
-justify-content:center;
-
-margin-top:32px;
-
-flex-wrap:wrap
+.buttons{
+    margin-top:30px;
+    display:flex;
+    gap:12px;
 }
 
-.primary,
-.secondary{
-padding:15px 24px;
-
-border:1px solid #111;
-
-font-size:10px;
-
-font-weight:800;
-
-letter-spacing:1.5px
+.btn{
+    padding:15px 25px;
+    border:1px solid #000;
+    font-weight:bold;
+    font-size:12px;
+    display:inline-block;
 }
 
-.primary{
-background:#080808;
-color:#fff
+.btn-white{
+    background:#fff;
+    color:#000;
 }
 
-.secondary{
-background:#fff;
-color:#080808
+.btn-black{
+    background:#000;
+    color:#fff;
 }
 
-.primary:hover{
-transform:translateY(-2px)
+.hero-logo{
+    display:flex;
+    justify-content:center;
 }
 
-
-/* =========================
-   MARQUEE
-========================= */
-
-.strip{
-border-block:1px solid #eee;
-
-overflow:hidden;
-
-white-space:nowrap;
-
-padding:13px 0
+.hero-logo img{
+    width:min(480px,90%);
+    background:#fff;
+    padding:15px;
 }
 
-.strip div{
-display:inline-block;
-
-animation:move 22s linear infinite
+section{
+    padding:90px 7%;
 }
 
-.strip span{
-font-size:9px;
-
-font-weight:800;
-
-letter-spacing:4px;
-
-margin:0 35px
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
 }
 
-@keyframes move{
-
-to{
-transform:translateX(-50%)
+.section-title small{
+    font-weight:bold;
+    letter-spacing:2px;
 }
 
-}
-
-
-/* =========================
-   CONTAINER
-========================= */
-
-.wrap{
-max-width:1400px;
-
-margin:auto;
-
-padding:0 5%
-}
-
-
-/* =========================
-   QUICK CATEGORIES
-========================= */
-
-.quick{
-padding:70px 0 25px
-}
-
-.quick-head{
-display:flex;
-
-align-items:end;
-
-justify-content:space-between;
-
-gap:20px;
-
-margin-bottom:22px
-}
-
-.quick h2{
-font-size:clamp(35px,5vw,68px);
-
-letter-spacing:-4px;
-
-line-height:.9
-}
-
-.quick p{
-font-size:11px;
-
-color:#777;
-
-max-width:350px;
-
-line-height:1.7
+.section-title h2{
+    font-size:60px;
+    margin-top:10px;
 }
 
 .categories{
-display:grid;
-
-grid-template-columns:repeat(5,1fr);
-
-gap:10px
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
-.cat{
-position:relative;
-
-min-height:125px;
-
-border:1px solid #ddd;
-
-background:#f5f5f3;
-
-display:flex;
-
-align-items:end;
-
-padding:16px;
-
-overflow:hidden;
-
-text-align:left
+.category{
+    height:200px;
+    border:1px solid #ddd;
+    background:#f5f5f5;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:.25s;
 }
 
-.cat:before{
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:url('images/lookbook.jpg') center/cover;
-
-opacity:.13;
-
-transition:.4s
+.category:hover{
+    background:#000;
+    color:#fff;
 }
 
-.cat:hover:before{
-opacity:.28;
-
-transform:scale(1.04)
+.category span{
+    font-size:12px;
+    font-weight:bold;
 }
 
-.cat div{
-position:relative;
-z-index:2
-}
-
-.cat strong{
-font-size:12px;
-
-letter-spacing:1px
-}
-
-.cat small{
-display:block;
-
-font-size:8px;
-
-opacity:.55;
-
-margin-top:5px
-}
-
-
-/* =========================
-   SHOP
-========================= */
-
-.shop{
-padding:55px 0 120px
-}
-
-.shopbar{
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:15px;
-
-margin-bottom:25px;
-
-position:sticky;
-
-top:72px;
-
-background:rgba(255,255,255,.92);
-
-backdrop-filter:blur(12px);
-
-padding:14px 0;
-
-z-index:20
+.category h3{
+    font-size:25px;
 }
 
 .filters{
-display:flex;
-
-gap:7px;
-
-flex-wrap:wrap
+    max-width:1200px;
+    margin:0 auto 30px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
 }
 
 .filter{
-border:1px solid #ddd;
-
-background:#fff;
-
-border-radius:999px;
-
-padding:9px 14px;
-
-font-size:9px;
-
-font-weight:800;
-
-letter-spacing:.7px
+    padding:11px 18px;
+    border:1px solid #000;
+    background:#fff;
+    font-weight:bold;
 }
 
 .filter.active,
 .filter:hover{
-background:#080808;
-
-color:#fff;
-
-border-color:#080808
+    background:#000;
+    color:#fff;
 }
-
-.search{
-width:190px;
-
-border:1px solid #ddd;
-
-padding:10px 13px;
-
-font-size:10px;
-
-outline:0
-}
-
-
-/* =========================
-   PRODUCTS
-========================= */
 
 .products{
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:18px
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
 .product{
-cursor:pointer
+    border:1px solid #ddd;
+    background:#fff;
+    overflow:hidden;
 }
 
-.photo{
-aspect-ratio:4/5;
-
-background:#f4f4f2;
-
-overflow:hidden;
-
-position:relative
+.product-image{
+    height:300px;
+    background:#f1f1f1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.photo img{
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-display:block;
-
-transition:.5s
+.product-image img{
+    width:75%;
+    height:75%;
+    object-fit:contain;
 }
 
-.product:hover img{
-transform:scale(1.035)
+.product-info{
+    padding:20px;
 }
 
-.badge{
-position:absolute;
-
-left:10px;
-
-top:10px;
-
-background:#080808;
-
-color:#fff;
-
-padding:6px 8px;
-
-font-size:7px;
-
-font-weight:800;
-
-z-index:2
+.product-info small{
+    color:#777;
+    font-weight:bold;
 }
 
-.info{
-padding:14px 2px
+.product-info h3{
+    margin-top:5px;
+    font-size:19px;
 }
 
-.info h3{
-font-size:12px
+.product-info p{
+    color:#777;
+    font-size:13px;
+    margin-top:7px;
 }
 
-.info p{
-font-size:9px;
-
-color:#777;
-
-margin-top:5px
+.product-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:20px;
 }
 
 .price{
-font-size:11px;
-
-font-weight:800;
-
-margin-top:9px
-}
-
-
-/* =========================
-   STORY
-========================= */
-
-.story{
-background:#080808;
-
-color:#fff;
-
-padding:130px 0
-}
-
-.storygrid{
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:70px;
-
-align-items:center
-}
-
-.story h2{
-font-size:clamp(42px,6vw,82px);
-
-line-height:.9;
-
-letter-spacing:-5px
-}
-
-.story p{
-color:#aaa;
-
-font-size:12px;
-
-line-height:2;
-
-max-width:520px
-}
-
-.story strong{
-color:#fff
-}
-
-
-/* =========================
-   LOOKBOOK
-========================= */
-
-.look{
-padding:110px 0
-}
-
-.lookgrid{
-display:grid;
-
-grid-template-columns:.8fr 1.2fr;
-
-gap:60px;
-
-align-items:center
-}
-
-.look img{
-width:100%;
-
-display:block
-}
-
-.look h2{
-font-size:clamp(42px,6vw,82px);
-
-letter-spacing:-5px;
-
-line-height:.9
-}
-
-.look p{
-font-size:12px;
-
-color:#666;
-
-line-height:1.9;
-
-margin-top:25px
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-border-top:1px solid #eee;
-
-padding:50px 5%;
-
-display:flex;
-
-justify-content:space-between;
-
-gap:20px
-}
-
-footer strong{
-font-size:20px
-}
-
-footer p,
-footer a{
-font-size:9px;
-
-color:#777;
-
-text-decoration:none
-}
-
-footer .flinks{
-display:flex;
-
-gap:20px
-}
-
-
-/* =========================
-   PRODUCT MODAL
-========================= */
-
-.overlay{
-position:fixed;
-
-inset:0;
-
-background:rgba(255,255,255,.85);
-
-backdrop-filter:blur(14px);
-
-z-index:100;
-
-display:none;
-
-align-items:center;
-
-justify-content:center;
-
-padding:18px
-}
-
-.overlay.show{
-display:flex
-}
-
-.modal{
-background:#fff;
-
-max-width:900px;
-
-width:100%;
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-box-shadow:0 20px 70px #0002;
-
-max-height:90vh;
-
-overflow:auto
-}
-
-.modalphoto{
-background:#f4f4f2
-}
-
-.modalphoto img{
-width:100%;
-
-height:100%;
-
-min-height:430px;
-
-object-fit:cover
-}
-
-.modalinfo{
-padding:42px
-}
-
-.close{
-float:right;
-
-border:0;
-
-background:none;
-
-font-size:24px
-}
-
-.modalinfo h2{
-font-size:28px;
-
-letter-spacing:-2px;
-
-margin-top:25px
-}
-
-.modalinfo .mp{
-margin-top:12px;
-
-font-weight:800
-}
-
-.modalinfo p{
-font-size:11px;
-
-color:#666;
-
-line-height:1.8;
-
-margin-top:20px
-}
-
-.sizes{
-display:flex;
-
-gap:7px;
-
-margin:24px 0
-}
-
-.size{
-width:40px;
-
-height:38px;
-
-border:1px solid #ddd;
-
-background:#fff;
-
-font-size:9px
-}
-
-.size.sel{
-background:#080808;
-
-color:#fff;
-
-border-color:#080808
+    font-weight:bold;
 }
 
 .add{
-width:100%;
-
-padding:16px;
-
-background:#080808;
-
-color:#fff;
-
-border:0;
-
-font-size:10px;
-
-font-weight:800;
-
-letter-spacing:1px
+    border:0;
+    background:#000;
+    color:#fff;
+    padding:10px 15px;
+    font-size:11px;
+    font-weight:bold;
 }
 
+.about{
+    background:#000;
+    color:#fff;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:500px;
+    padding:0;
+}
 
-/* =========================
-   CART
-========================= */
+.about-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px;
+}
+
+.about-image img{
+    max-width:450px;
+    width:100%;
+    background:#fff;
+    padding:15px;
+}
+
+.about-text{
+    background:#f3f3f3;
+    color:#000;
+    padding:70px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.about-text h2{
+    font-size:65px;
+    line-height:.9;
+}
+
+.about-text p{
+    margin-top:25px;
+    max-width:500px;
+    color:#555;
+    line-height:1.7;
+}
+
+.about-list{
+    margin:25px 0;
+}
+
+.about-list div{
+    padding:12px 0;
+    border-top:1px solid #ccc;
+    font-weight:bold;
+    font-size:12px;
+}
+
+.values{
+    background:#000;
+    color:#fff;
+}
+
+.values-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.value{
+    border:1px solid #333;
+    padding:35px;
+}
+
+.value span{
+    color:#777;
+    font-weight:bold;
+}
+
+.value h3{
+    margin-top:45px;
+    font-size:28px;
+}
+
+.value p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+.promo{
+    background:#000;
+    color:#fff;
+    text-align:center;
+}
+
+.promo h2{
+    font-size:70px;
+}
+
+.promo p{
+    color:#aaa;
+    margin:15px auto 30px;
+}
+
+.newsletter{
+    background:#f4f4f4;
+    text-align:center;
+}
+
+.newsletter h2{
+    font-size:40px;
+}
+
+.newsletter p{
+    color:#777;
+    margin:12px 0 25px;
+}
+
+.newsletter form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+}
+
+.newsletter input{
+    flex:1;
+    border:1px solid #000;
+    padding:15px;
+}
+
+.newsletter button{
+    background:#000;
+    color:#fff;
+    border:1px solid #000;
+    padding:0 25px;
+    font-weight:bold;
+}
+
+footer{
+    background:#000;
+    color:#fff;
+    padding:60px 7% 25px;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-brand h2{
+    font-size:45px;
+}
+
+.footer-brand p{
+    color:#888;
+    max-width:300px;
+    margin-top:15px;
+}
+
+.footer-column h3{
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.footer-column a{
+    display:block;
+    color:#aaa;
+    margin:9px 0;
+    font-size:13px;
+}
+
+.footer-column a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+    max-width:1200px;
+    margin:45px auto 0;
+    padding-top:20px;
+    border-top:1px solid #333;
+    display:flex;
+    justify-content:space-between;
+    color:#777;
+    font-size:11px;
+}
 
 .cart{
-position:fixed;
-
-right:-430px;
-
-top:0;
-
-width:min(430px,100%);
-
-height:100vh;
-
-background:#fff;
-
-z-index:120;
-
-padding:28px;
-
-box-shadow:-20px 0 60px #0001;
-
-transition:.35s
+    position:fixed;
+    right:-450px;
+    top:0;
+    width:430px;
+    max-width:100%;
+    height:100vh;
+    background:#fff;
+    z-index:3000;
+    box-shadow:-10px 0 40px rgba(0,0,0,.2);
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
 }
 
 .cart.open{
-right:0
+    right:0;
 }
 
-.carthead{
-display:flex;
-
-justify-content:space-between
+.cart-header{
+    padding:25px;
+    border-bottom:1px solid #ddd;
+    display:flex;
+    justify-content:space-between;
 }
 
-.cartitems{
-margin-top:30px
+.cart-header button{
+    background:#fff;
+    border:1px solid #000;
+    width:35px;
+    height:35px;
 }
 
-.ci{
-display:flex;
+.cart-items{
+    flex:1;
+    overflow:auto;
+    padding:20px;
+}
 
-justify-content:space-between;
+.empty{
+    text-align:center;
+    color:#777;
+    margin-top:60px;
+}
 
-border-bottom:1px solid #eee;
+.cart-item{
+    display:grid;
+    grid-template-columns:70px 1fr auto;
+    gap:12px;
+    padding:15px 0;
+    border-bottom:1px solid #ddd;
+}
 
-padding:15px 0;
+.cart-item img{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    background:#eee;
+}
 
-font-size:10px
+.cart-item h4{
+    font-size:14px;
+}
+
+.cart-item p{
+    color:#777;
+    font-size:12px;
+}
+
+.quantity{
+    display:flex;
+    gap:5px;
+    margin-top:8px;
+}
+
+.quantity button{
+    width:25px;
+    height:25px;
+    border:1px solid #ccc;
+    background:#fff;
+}
+
+.cart-footer{
+    border-top:1px solid #ddd;
+    padding:20px;
 }
 
 .total{
-display:flex;
-
-justify-content:space-between;
-
-font-weight:800;
-
-margin-top:25px
+    display:flex;
+    justify-content:space-between;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:15px;
 }
 
 .checkout{
-width:100%;
-
-padding:16px;
-
-margin-top:20px;
-
-background:#080808;
-
-color:#fff;
-
-border:0;
-
-font-size:10px;
-
-font-weight:800
+    width:100%;
+    background:#000;
+    color:#fff;
+    border:0;
+    padding:16px;
+    font-weight:bold;
 }
 
+.toast{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#000;
+    color:#fff;
+    padding:14px 22px;
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+    z-index:5000;
+}
 
-/* =========================
-   MOBILE
-========================= */
+.toast.show{
+    opacity:1;
+}
 
 @media(max-width:900px){
 
-.navlinks{
-display:none
+    nav{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .values-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
-.categories{
-grid-template-columns:repeat(2,1fr)
-}
+@media(max-width:600px){
 
-.products{
-grid-template-columns:repeat(2,1fr)
-}
+    .hero h1{
+        font-size:80px;
+    }
 
-.storygrid,
-.lookgrid{
-grid-template-columns:1fr
-}
+    .hero h2{
+        font-size:25px;
+    }
 
-.shopbar{
-align-items:flex-start;
+    .categories,
+    .products{
+        grid-template-columns:1fr;
+    }
 
-flex-direction:column
-}
+    .section-title h2{
+        font-size:45px;
+    }
 
-.search{
-width:100%
-}
+    .about-text{
+        padding:45px 25px;
+    }
 
-}
+    .about-text h2{
+        font-size:50px;
+    }
 
+    .promo h2{
+        font-size:45px;
+    }
 
-@media(max-width:520px){
+    .newsletter form{
+        flex-direction:column;
+        gap:8px;
+    }
 
-.hero h1{
-letter-spacing:-4px
-}
+    .newsletter button{
+        padding:15px;
+    }
 
-.categories{
-grid-template-columns:1fr 1fr
-}
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
 
-.products{
-grid-template-columns:1fr 1fr;
-
-gap:12px
-}
-
-.modal{
-grid-template-columns:1fr
-}
-
-.modalphoto img{
-min-height:280px
-}
-
-.modalinfo{
-padding:25px
-}
-
-.hero:before{
-inset:15% 0
-}
-
-.quick-head{
-display:block
-}
-
-.quick p{
-margin-top:15px
-}
-
+    .footer-bottom{
+        display:block;
+    }
 }
 </style>
 </head>
 
-
 <body>
 
+<header>
+<div class="navbar">
 
-<!-- =========================
-     NAV
-========================= -->
+<a href="#inicio" class="logo">
+<img src="MERCHANS.png" alt="SNG">
+<span>SNG</span>
+</a>
 
 <nav>
-
-<div class="brand">
-SNG<span>®</span>
-</div>
-
-<ul class="navlinks">
-
-<li>
-<a href="#shop">SHOP</a>
-</li>
-
-<li>
+<a href="#inicio">INICI</a>
 <a href="#categories">CATEGORIES</a>
-</li>
-
-<li>
-<a href="#story">ABOUT</a>
-</li>
-
-</ul>
-
-<button class="bag" onclick="openCart()">
-BAG (<span id="count">0</span>)
-</button>
-
+<a href="#catalog">CATÀLEG</a>
+<a href="#nosaltres">NOSALTRES</a>
+<a href="#contacte">CONTACTE</a>
 </nav>
 
+<button class="cart-button" onclick="openCart()">
+CARRET (<span id="cartCount">0</span>)
+</button>
 
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-<div class="hero-content">
-
-<div class="eyebrow">
-SNG STREETWEAR · COLLECTION 01
 </div>
+</header>
 
-<h1>
-GOD<br>
-STAYS<br>
-NEAR
-</h1>
+<section class="hero" id="inicio">
+
+<div class="hero-text">
+
+<small>NOVA COL·LECCIÓ · 2026</small>
+
+<h1>SNG</h1>
+
+<h2>GOD STAYS NEAR</h2>
 
 <p>
-Streetwear con identidad.
-Diseños limpios, piezas para todos los días
-y un mensaje que va contigo.
+Roba urbana amb un estil simple, modern i diferent.
+Una marca creada per expressar-te i portar una identitat pròpia.
 </p>
 
-<div class="hero-actions">
+<div class="buttons">
 
-<button
-class="primary"
-onclick="document.querySelector('#shop').scrollIntoView({behavior:'smooth'})">
+<a href="#catalog" class="btn btn-white">
+VEURE CATÀLEG
+</a>
 
-SHOP THE DROP
-
-</button>
-
-<button
-class="secondary"
-onclick="document.querySelector('#categories').scrollIntoView({behavior:'smooth'})">
-
-VIEW CATEGORIES
-
-</button>
+<a href="#nosaltres" class="btn btn-black">
+SABER MÉS
+</a>
 
 </div>
+
+</div>
+
+<div class="hero-logo">
+
+<img src="MERCHANS.png" alt="Logo oficial SNG">
 
 </div>
 
 </section>
 
+<section id="categories">
 
-<!-- =========================
-     MARQUEE
-========================= -->
+<div class="section-title">
 
-<div class="strip">
+<small>EXPLORA</small>
 
-<div>
-
-<span>SNG</span>
-
-<span>GOD STAYS NEAR</span>
-
-<span>COLLECTION 01</span>
-
-<span>STAY CLOSE</span>
-
-<span>SNG</span>
-
-<span>GOD STAYS NEAR</span>
-
-<span>COLLECTION 01</span>
-
-<span>STAY CLOSE</span>
+<h2>CATEGORIES</h2>
 
 </div>
-
-</div>
-
-
-<!-- =========================
-     CATEGORIES
-========================= -->
-
-<section
-class="quick wrap"
-id="categories">
-
-<div class="quick-head">
-
-<div>
-
-<div class="eyebrow">
-FIND IT FAST
-</div>
-
-<h2>
-SHOP BY<br>
-CATEGORY.
-</h2>
-
-</div>
-
-<p>
-Entra directamente en la categoría que buscas.
-Sin perder tiempo.
-</p>
-
-</div>
-
 
 <div class="categories">
 
-<button
-class="cat"
-onclick="setFilter('shirts')">
+<a href="#catalog" class="category" onclick="filterProducts('samarretes')">
+<span>01</span>
+<h3>SAMARRETES</h3>
+<span>VEURE →</span>
+</a>
 
-<div>
+<a href="#catalog" class="category" onclick="filterProducts('dessuadores')">
+<span>02</span>
+<h3>DESSUADORES</h3>
+<span>VEURE →</span>
+</a>
 
-<strong>
-T-SHIRTS
-</strong>
+<a href="#catalog" class="category" onclick="filterProducts('gorres')">
+<span>03</span>
+<h3>GORRES</h3>
+<span>VEURE →</span>
+</a>
 
-<small>
-ESSENTIALS & GRAPHICS
-</small>
-
-</div>
-
-</button>
-
-
-<button
-class="cat"
-onclick="setFilter('hoodies')">
-
-<div>
-
-<strong>
-HOODIES
-</strong>
-
-<small>
-HEAVY & OVERSIZED
-</small>
-
-</div>
-
-</button>
-
-
-<button
-class="cat"
-onclick="setFilter('pants')">
-
-<div>
-
-<strong>
-PANTS
-</strong>
-
-<small>
-RELAXED & CARGO
-</small>
-
-</div>
-
-</button>
-
-
-<button
-class="cat"
-onclick="setFilter('shorts')">
-
-<div>
-
-<strong>
-SHORTS
-</strong>
-
-<small>
-EVERYDAY FIT
-</small>
-
-</div>
-
-</button>
-
-
-<button
-class="cat"
-onclick="setFilter('caps')">
-
-<div>
-
-<strong>
-CAPS
-</strong>
-
-<small>
-SIGNATURE ACCESSORIES
-</small>
-
-</div>
-
-</button>
+<a href="#catalog" class="category" onclick="filterProducts('bosses')">
+<span>04</span>
+<h3>BOSSES</h3>
+<span>VEURE →</span>
+</a>
 
 </div>
 
 </section>
 
+<section id="catalog">
 
-<!-- =========================
-     SHOP
-========================= -->
+<div class="section-title">
 
-<section
-class="shop wrap"
-id="shop">
+<small>SNG SHOP</small>
 
+<h2>CATÀLEG</h2>
 
-<div class="shopbar">
-
+</div>
 
 <div class="filters">
 
-<button
-class="filter active"
-data-f="all"
-onclick="setFilter('all')">
-ALL
+<button class="filter active" onclick="filterProducts('tots')">
+TOTS
 </button>
 
-<button
-class="filter"
-data-f="shirts"
-onclick="setFilter('shirts')">
-T-SHIRTS
+<button class="filter" onclick="filterProducts('samarretes')">
+SAMARRETES
 </button>
 
-<button
-class="filter"
-data-f="hoodies"
-onclick="setFilter('hoodies')">
-HOODIES
+<button class="filter" onclick="filterProducts('dessuadores')">
+DESSUADORES
 </button>
 
-<button
-class="filter"
-data-f="pants"
-onclick="setFilter('pants')">
-PANTS
+<button class="filter" onclick="filterProducts('gorres')">
+GORRES
 </button>
 
-<button
-class="filter"
-data-f="shorts"
-onclick="setFilter('shorts')">
-SHORTS
-</button>
-
-<button
-class="filter"
-data-f="caps"
-onclick="setFilter('caps')">
-CAPS
+<button class="filter" onclick="filterProducts('bosses')">
+BOSSES
 </button>
 
 </div>
 
+<div class="products" id="products">
+
+<div class="product" data-category="samarretes">
+
+<div class="product-image">
+<img src="MERCHANS.png" alt="Samarreta Classic">
+</div>
+
+<div class="product-info">
+
+<small>SNG ESSENTIAL</small>
+
+<h3>Samarreta Classic</h3>
+
+<p>Samarreta negra amb el logo SNG.</p>
+
+<div class="product-bottom">
+
+<span class="price">20 €</span>
+
+<button class="add" onclick="addToCart(1)">
+AFEGIR
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="product" data-category="samarretes">
+
+<div class="product-image">
+<img src="MERCHANS.png" alt="Samarreta Logo">
+</div>
+
+<div class="product-info">
+
+<small>SNG LOGO</small>
+
+<h3>Samarreta Logo</h3>
+
+<p>Disseny frontal amb el logo.</p>
+
+<div class="product-bottom">
+
+<span class="price">22 €</span>
+
+<button class="add" onclick="addToCart(2)">
+AFEGIR
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="product" data-category="dessuadores">
+
+<div class="product-image">
+<img src="MERCHANS.png" alt="Dessuadora Original">
+</div>
+
+<div class="product-info">
+
+<small>SNG HEAVY</small>
+
+<h3>Dessuadora Original</h3>
+
+<p>Dessuadora còmoda per cada dia.</p>
+
+<div class="product-bottom">
+
+<span class="price">40 €</span>
+
+<button class="add" onclick="addToCart(3)">
+AFEGIR
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="product" data-category="dessuadores">
+
+<div class="product-image">
+<img src="MERCHANS.png" alt="Dessuadora God Stays Near">
+</div>
+
+<div class="product-info">
+
+<small>LIMITED</small>
+
+<h3>God Stays Near</h3>
+
+<p>La peça principal de la col·lecció.</p>
+
+<div class="product-bottom">
+
+<span class="price">45 €</span>
+
+<button class="add" onclick="addToCart(4)">
+AFEGIR
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="product" data-category="gorres">
+
+<div class="product-image">
+<img src="MERCHANS.png" alt="Gorra SNG">
+</div>
+
+<div class="product-info">
+
+<small>ACCESSORI</small>
+
+<h3>Gorra SNG</h3>
+
+<p>Gorra negra amb el logo.</p>
+
+<div class="product-bottom">
+
+<span class="price">18 €</span>
+
+<button class="add" onclick="addToCart(5)">
+AFEGIR
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="product" data-category="gorres">
+
+<div class="product-image">
+<img src="MERCHANS.png" alt="Gorra GSN">
+</div>
+
+<div class="product-info">
+
+<small>ACCESSORI</small>
+
+<h3>Gorra GSN</h3>
+
+<p>Model especial de la marca.</p>
+
+<div class="product-bottom">
+
+<span class="price">20 €</span>
+
+<button class="add" onclick="addToCart(6)">
+AFEGIR
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="product" data-category="bosses">
+
+<div class="product-image">
+<img src="MERCHANS.png" alt="Bossa SNG">
+</div>
+
+<div class="product-info">
+
+<small>ACCESSORI</small>
+
+<h3>Bossa SNG</h3>
+
+<p>Bossa de roba per al dia a dia.</p>
+
+<div class="product-bottom">
+
+<span class="price">12 €</span>
+
+<button class="add" onclick="addToCart(7)">
+AFEGIR
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="product" data-category="bosses">
+
+<div class="product-image">
+<img src="MERCHANS.png" alt="Bossa GSN">
+</div>
+
+<div class="product-info">
+
+<small>LIMITED</small>
+
+<h3>Bossa GSN</h3>
+
+<p>Edició especial amb el lema.</p>
+
+<div class="product-bottom">
+
+<span class="price">15 €</span>
+
+<button class="add" onclick="addToCart(8)">
+AFEGIR
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="about" id="nosaltres">
+
+<div class="about-image">
+
+<img src="MERCHANS.png" alt="Logo SNG">
+
+</div>
+
+<div class="about-text">
+
+<h2>GOD<br>STAYS<br>NEAR.</h2>
+
+<p>
+SNG és una marca creada per tres creadors:
+Sergio, Nil i Gorka. La nostra idea és crear roba
+urbana amb un disseny simple i fàcil de reconèixer.
+</p>
+
+<div class="about-list">
+
+<div>01 — DISSENYS SIMPLES</div>
+
+<div>02 — ESTIL URBÀ</div>
+
+<div>03 — PREUS ASSEQUIBLES</div>
+
+<div>04 — COL·LECCIONS LIMITADES</div>
+
+</div>
+
+<a href="#catalog" class="btn btn-black">
+VEURE PRODUCTES
+</a>
+
+</div>
+
+</section>
+
+<section class="values">
+
+<div class="section-title">
+
+<small>LA NOSTRA IDENTITAT</small>
+
+<h2>EL NOSTRE ESTIL</h2>
+
+</div>
+
+<div class="values-grid">
+
+<div class="value">
+
+<span>01</span>
+
+<h3>SIMPLE</h3>
+
+<p>
+Dissenys fàcils de combinar i fàcils de recordar.
+</p>
+
+</div>
+
+<div class="value">
+
+<span>02</span>
+
+<h3>URBÀ</h3>
+
+<p>
+Una estètica pensada per al dia a dia.
+</p>
+
+</div>
+
+<div class="value">
+
+<span>03</span>
+
+<h3>DIFERENT</h3>
+
+<p>
+Volem crear una identitat pròpia i reconeixible.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="promo">
+
+<h2>10% DE DESCOMPTE</h2>
+
+<p>
+Oferta especial pel llançament de SNG.
+</p>
+
+<a href="#catalog" class="btn btn-white">
+COMPRAR ARA
+</a>
+
+</section>
+
+<section class="newsletter" id="contacte">
+
+<h2>UNEIX-TE A SNG</h2>
+
+<p>
+Rep les novetats de la marca i les pròximes col·leccions.
+</p>
+
+<form onsubmit="subscribe(event)">
 
 <input
-id="search"
-class="search"
-placeholder="Search SNG..."
-oninput="render()">
+type="email"
+id="email"
+placeholder="El teu correu electrònic"
+required
+>
 
-</div>
+<button type="submit">
+SUBSCRIURE'M
+</button>
 
-
-<div
-class="products"
-id="products">
-</div>
-
+</form>
 
 </section>
-
-
-<!-- =========================
-     MESSAGE
-========================= -->
-
-<section
-class="story"
-id="story">
-
-<div class="storygrid wrap">
-
-<div>
-
-<div class="eyebrow">
-THE MESSAGE
-</div>
-
-<h2>
-GOD STAYS<br>
-NEAR.
-</h2>
-
-</div>
-
-
-<p>
-
-SNG nace alrededor de una idea sencilla:
-
-<strong>
-GOD STAYS NEAR.
-</strong>
-
-Creamos prendas modernas para llevar ese mensaje contigo.
-
-No buscamos llenar el armario;
-buscamos crear piezas que tengan identidad.
-
-</p>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     LOOKBOOK
-========================= -->
-
-<section class="look wrap">
-
-<div class="lookgrid">
-
-
-<div>
-
-<div class="eyebrow">
-COLLECTION 01
-</div>
-
-<h2>
-MADE TO<br>
-STAY.
-</h2>
-
-<p>
-Una colección construida alrededor de tonos
-fáciles de llevar, gráficos fuertes y el lenguaje
-visual de SNG.
-</p>
-
-</div>
-
-
-<div>
-
-<img
-src="images/lookbook.jpg"
-alt="SNG Collection">
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
 
-<div>
+<div class="footer-grid">
 
-<strong>
-SNG®
-</strong>
+<div class="footer-brand">
+
+<h2>SNG</h2>
 
 <p>
-GOD STAYS NEAR.
+God Stays Near. Roba urbana creada per Sergio,
+Nil i Gorka.
 </p>
 
 </div>
 
+<div class="footer-column">
 
-<div class="flinks">
+<h3>BOTIGA</h3>
 
-<a href="#">
-INSTAGRAM
-</a>
+<a href="#catalog">Catàleg</a>
 
-<a href="#">
-TIKTOK
-</a>
+<a href="#catalog">Samarretes</a>
 
-<a href="#">
-CONTACT
-</a>
+<a href="#catalog">Dessuadores</a>
+
+<a href="#catalog">Gorres</a>
+
+<a href="#catalog">Bosses</a>
+
+</div>
+
+<div class="footer-column">
+
+<h3>SNG</h3>
+
+<a href="#nosaltres">Nosaltres</a>
+
+<a href="#categories">Categories</a>
+
+<a href="#contacte">Contacte</a>
+
+</div>
+
+<div class="footer-column">
+
+<h3>XARXES</h3>
+
+<a href="#">Instagram</a>
+
+<a href="#">TikTok</a>
+
+<a href="#">YouTube</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<span>© 2026 SNG</span>
+
+<span>GOD STAYS NEAR</span>
 
 </div>
 
 </footer>
 
+<div class="cart" id="cart">
 
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
+<div class="cart-header">
 
-<div
-class="overlay"
-id="overlay"
-onclick="if(event.target===this)closeModal()">
+<h2>EL TEU CARRET</h2>
 
-
-<div class="modal">
-
-
-<div class="modalphoto">
-
-<img
-id="mimg"
-src=""
-alt="">
+<button onclick="closeCart()">✕</button>
 
 </div>
 
+<div class="cart-items" id="cartItems">
 
-<div class="modalinfo">
-
-<button
-class="close"
-onclick="closeModal()">
-
-×
-
-</button>
-
-
-<h2 id="mname">
-</h2>
-
-
-<div
-class="mp"
-id="mprice">
-</div>
-
-
-<p>
-
-Una pieza de SNG diseñada alrededor
-del mensaje
-
-<strong>
-GOD STAYS NEAR.
-</strong>
-
-</p>
-
-
-<div class="sizes">
-
-<button
-class="size"
-onclick="size(this)">
-XS
-</button>
-
-<button
-class="size"
-onclick="size(this)">
-S
-</button>
-
-<button
-class="size sel"
-onclick="size(this)">
-M
-</button>
-
-<button
-class="size"
-onclick="size(this)">
-L
-</button>
-
-<button
-class="size"
-onclick="size(this)">
-XL
-</button>
-
-</div>
-
-
-<button
-class="add"
-onclick="add()">
-
-ADD TO BAG
-
-</button>
-
-
+<div class="empty">
+El teu carret està buit.
 </div>
 
 </div>
 
-</div>
-
-
-<!-- =========================
-     CART
-========================= -->
-
-<aside
-class="cart"
-id="cart">
-
-
-<div class="carthead">
-
-<strong>
-YOUR BAG
-</strong>
-
-<button
-class="close"
-onclick="closeCart()">
-
-×
-
-</button>
-
-</div>
-
-
-<div
-class="cartitems"
-id="items">
-</div>
-
+<div class="cart-footer">
 
 <div class="total">
 
-<span>
-TOTAL
-</span>
+<span>TOTAL</span>
 
-<span id="total">
-0,00 €
-</span>
+<span id="total">0 €</span>
 
 </div>
 
-
-<button
-class="checkout"
-onclick="checkout()">
-
-CHECKOUT
-
+<button class="checkout" onclick="checkout()">
+FINALITZAR COMPRA
 </button>
 
+</div>
 
-</aside>
+</div>
 
+<div class="toast" id="toast">
+Producte afegit al carret.
+</div>
 
 <script>
 
-/* =========================
-   PRODUCTS
-========================= */
+const products = {
 
-const products=[
+1:{
+name:"Samarreta Classic",
+price:20,
+image:"MERCHANS.png"
+},
 
-[
-'Essential White Tee',
-'shirts',
-'29,99 €',
-'images/tee-1.jpg'
-],
+2:{
+name:"Samarreta Logo",
+price:22,
+image:"MERCHANS.png"
+},
 
-[
-'Signature Black Tee',
-'shirts',
-'29,99 €',
-'images/tee-2.jpg'
-],
+3:{
+name:"Dessuadora Original",
+price:40,
+image:"MERCHANS.png"
+},
 
-[
-'Olive Near Tee',
-'shirts',
-'34,99 €',
-'images/tee-3.jpg'
-],
+4:{
+name:"Dessuadora God Stays Near",
+price:45,
+image:"MERCHANS.png"
+},
 
-[
-'Cream Cross Tee',
-'shirts',
-'34,99 €',
-'images/tee-4.jpg'
-],
+5:{
+name:"Gorra SNG",
+price:18,
+image:"MERCHANS.png"
+},
 
+6:{
+name:"Gorra GSN",
+price:20,
+image:"MERCHANS.png"
+},
 
-[
-'Midnight Faith Hoodie',
-'hoodies',
-'64,99 €',
-'images/hoodie-1.jpg'
-],
+7:{
+name:"Bossa SNG",
+price:12,
+image:"MERCHANS.png"
+},
 
-[
-'Heavy Grey Hoodie',
-'hoodies',
-'64,99 €',
-'images/hoodie-2.jpg'
-],
+8:{
+name:"Bossa GSN",
+price:15,
+image:"MERCHANS.png"
+}
 
-[
-'Earth Brown Hoodie',
-'hoodies',
-'64,99 €',
-'images/hoodie-3.jpg'
-],
-
-[
-'Cream Statement Hoodie',
-'hoodies',
-'64,99 €',
-'images/hoodie-4.jpg'
-],
-
-
-[
-'Core Black Pants',
-'pants',
-'64,99 €',
-'images/bottom-1.jpg'
-],
-
-[
-'Grey Essential Pants',
-'pants',
-'64,99 €',
-'images/bottom-2.jpg'
-],
-
-[
-'Olive Utility Cargo',
-'pants',
-'69,99 €',
-'images/bottom-3.jpg'
-],
-
-[
-'Black Utility Cargo',
-'pants',
-'69,99 €',
-'images/bottom-4.jpg'
-],
-
-
-[
-'Black Everyday Shorts',
-'shorts',
-'39,99 €',
-'images/bottom-5.jpg'
-],
-
-[
-'Grey Everyday Shorts',
-'shorts',
-'39,99 €',
-'images/bottom-6.jpg'
-],
-
-[
-'Olive Everyday Shorts',
-'shorts',
-'39,99 €',
-'images/bottom-7.jpg'
-],
-
-[
-'Cream Everyday Shorts',
-'shorts',
-'39,99 €',
-'images/bottom-8.jpg'
-],
-
-
-[
-'Signature Black Cap',
-'caps',
-'24,99 €',
-'images/cap-1.jpg'
-],
-
-[
-'Cream Near Cap',
-'caps',
-'24,99 €',
-'images/cap-2.jpg'
-],
-
-[
-'Olive SNG Cap',
-'caps',
-'24,99 €',
-'images/cap-3.jpg'
-],
-
-[
-'Navy Signature Cap',
-'caps',
-'24,99 €',
-'images/cap-4.jpg'
-],
-
-[
-'Charcoal SNG Cap',
-'caps',
-'24,99 €',
-'images/cap-5.jpg'
-],
-
-[
-'Brown Near Cap',
-'caps',
-'24,99 €',
-'images/cap-6.jpg'
-]
-
-];
-
-
-let filter='all';
+};
 
 let cart=[];
 
-let current=null;
+function addToCart(id){
 
-let chosen='M';
-
-
-/* =========================
-   FILTER
-========================= */
-
-function setFilter(f){
-
-filter=f;
-
-document
-.querySelectorAll('.filter')
-.forEach(button=>{
-
-button.classList.toggle(
-'active',
-button.dataset.f===f
+let item=cart.find(
+product=>product.id===id
 );
 
-});
+if(item){
 
-document
-.querySelector('#shop')
-.scrollIntoView({
-behavior:'smooth',
-block:'start'
-});
+item.quantity++;
 
-render();
+}else{
+
+cart.push({
+id:id,
+quantity:1
+});
 
 }
 
+renderCart();
 
-/* =========================
-   RENDER PRODUCTS
-========================= */
+showToast("Producte afegit al carret.");
 
-function render(){
+}
 
-const search=
-document
-.querySelector('#search')
-.value
-.toLowerCase();
+function renderCart(){
 
+const container=
+document.getElementById("cartItems");
 
-const list=
-products.filter(product=>{
+const count=
+document.getElementById("cartCount");
 
-const categoryMatch=
-filter==='all' ||
-product[1]===filter;
+const total=
+document.getElementById("total");
 
-const searchMatch=
-product[0]
-.toLowerCase()
-.includes(search);
+let number=0;
 
-return categoryMatch && searchMatch;
+let price=0;
+
+cart.forEach(item=>{
+
+number+=item.quantity;
+
+price+=
+products[item.id].price*
+item.quantity;
 
 });
 
+count.textContent=number;
 
-document
-.querySelector('#products')
-.innerHTML=
+total.textContent=
+price.toFixed(2)+" €";
 
-list.map((product)=>{
+if(cart.length===0){
 
-const originalIndex=
-products.indexOf(product);
+container.innerHTML=
+'<div class="empty">El teu carret està buit.</div>';
 
-return `
+return;
 
-<article
-class="product"
-onclick="openModal(${originalIndex})">
-
-<div class="photo">
-
-${
-originalIndex<4 && filter==='all'
-?
-'<span class="badge">NEW DROP</span>'
-:
-''
 }
+
+container.innerHTML="";
+
+cart.forEach(item=>{
+
+const product=
+products[item.id];
+
+const element=
+document.createElement("div");
+
+element.className="cart-item";
+
+element.innerHTML=`
 
 <img
-src="${product[3]}"
-alt="${product[0]}"
-onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;height:100%;display:grid;place-items:center;font-size:10px;color:#777;text-align:center;padding:20px&quot;>IMAGEN NO ENCONTRADA<br>${product[3]}</div>'">
+src="${product.image}"
+alt="${product.name}"
+>
+
+<div>
+
+<h4>${product.name}</h4>
+
+<p>${product.price} €</p>
+
+<div class="quantity">
+
+<button
+onclick="changeQuantity(${item.id},-1)"
+>
+−
+</button>
+
+<span>${item.quantity}</span>
+
+<button
+onclick="changeQuantity(${item.id},1)"
+>
++
+</button>
 
 </div>
 
-
-<div class="info">
-
-<h3>
-${product[0]}
-</h3>
-
-<p>
-GOD STAYS NEAR · ${product[1].toUpperCase()}
-</p>
-
-<div class="price">
-${product[2]}
 </div>
 
-</div>
-
-</article>
+<strong>
+${product.price*item.quantity} €
+</strong>
 
 `;
 
-}).join('');
-
-
-if(list.length===0){
-
-document
-.querySelector('#products')
-.innerHTML=`
-
-<p
-style="
-grid-column:1/-1;
-padding:40px 0;
-color:#777;
-">
-
-No hemos encontrado esa prenda.
-
-</p>
-
-`;
-
-}
-
-}
-
-
-/* =========================
-   PRODUCT MODAL
-========================= */
-
-function openModal(index){
-
-current=products[index];
-
-document
-.querySelector('#mimg')
-.src=current[3];
-
-document
-.querySelector('#mname')
-.textContent=current[0];
-
-document
-.querySelector('#mprice')
-.textContent=current[2];
-
-document
-.querySelector('#overlay')
-.classList.add('show');
-
-}
-
-
-/* =========================
-   CLOSE MODAL
-========================= */
-
-function closeModal(){
-
-document
-.querySelector('#overlay')
-.classList.remove('show');
-
-}
-
-
-/* =========================
-   SIZE
-========================= */
-
-function size(button){
-
-document
-.querySelectorAll('.size')
-.forEach(x=>{
-
-x.classList.remove('sel');
+container.appendChild(element);
 
 });
 
-button.classList.add('sel');
-
-chosen=button.textContent;
-
 }
 
+function changeQuantity(id,change){
 
-/* =========================
-   ADD TO CART
-========================= */
+const item=
+cart.find(
+product=>product.id===id
+);
 
-function add(){
-
-if(!current){
+if(!item){
 return;
 }
 
-cart.push({
+item.quantity+=change;
 
-name:current[0],
+if(item.quantity<=0){
 
-price:current[2],
-
-size:chosen
-
-});
-
-updateCart();
-
-closeModal();
-
-openCart();
+cart=
+cart.filter(
+product=>product.id!==id
+);
 
 }
 
+renderCart();
 
-/* =========================
-   CART
-========================= */
+}
 
 function openCart(){
 
 document
-.querySelector('#cart')
-.classList.add('open');
+.getElementById("cart")
+.classList.add("open");
 
 }
-
 
 function closeCart(){
 
 document
-.querySelector('#cart')
-.classList.remove('open');
+.getElementById("cart")
+.classList.remove("open");
 
 }
 
+function filterProducts(category){
 
-/* =========================
-   UPDATE CART
-========================= */
+const products=
+document.querySelectorAll(".product");
 
-function updateCart(){
+const buttons=
+document.querySelectorAll(".filter");
 
-document
-.querySelector('#count')
-.textContent=cart.length;
-
-
-document
-.querySelector('#items')
-.innerHTML=
-
-cart.length
-
-?
-
-cart.map((item,index)=>`
-
-<div class="ci">
-
-<span>
-
-<b>
-${item.name}
-</b>
-
-<br>
-
-Size ${item.size}
-
-</span>
-
-
-<span>
-
-${item.price}
-
-<button
-onclick="removeItem(${index})"
-style="
-border:0;
-background:none;
-font-size:16px;
-margin-left:6px;
-">
-
-×
-</button>
-
-</span>
-
-</div>
-
-`).join('')
-
-:
-
-'<p style="color:#777;font-size:11px">Your bag is empty.</p>';
-
-
-let total=0;
-
-
-cart.forEach(item=>{
-
-total+=parseFloat(
-item.price
-.replace('.','')
-.replace(',','.')
+buttons.forEach(
+button=>button.classList.remove("active")
 );
+
+products.forEach(product=>{
+
+if(
+category==="tots"||
+product.dataset.category===category
+){
+
+product.style.display="block";
+
+}else{
+
+product.style.display="none";
+
+}
 
 });
 
+}
 
-document
-.querySelector('#total')
-.textContent=
+function showToast(message){
 
-total
-.toFixed(2)
-.replace('.',',')
-+' €';
+const toast=
+document.getElementById("toast");
+
+toast.textContent=message;
+
+toast.classList.add("show");
+
+setTimeout(
+()=>{
+toast.classList.remove("show");
+},
+2000
+);
 
 }
 
+function subscribe(event){
 
-/* =========================
-   REMOVE ITEM
-========================= */
+event.preventDefault();
 
-function removeItem(index){
+document.getElementById("email").value="";
 
-cart.splice(index,1);
-
-updateCart();
+showToast(
+"T'has inscrit correctament a SNG."
+);
 
 }
-
-
-/* =========================
-   CHECKOUT
-========================= */
 
 function checkout(){
 
 if(cart.length===0){
 
-alert(
-'Tu bolsa está vacía.'
+showToast(
+"El carret està buit."
 );
 
 return;
 
 }
 
-alert(
-'El checkout se conectará aquí con tu sistema de pago.'
+showToast(
+"Compra de demostració preparada."
 );
 
 }
 
-
-/* =========================
-   ESC CLOSE
-========================= */
-
-document
-.addEventListener(
-'keydown',
-function(event){
-
-if(event.key==='Escape'){
-
-closeModal();
-
-closeCart();
-
-}
-
-});
-
-
-/* =========================
-   INITIAL RENDER
-========================= */
-
-render();
+renderCart();
 
 </script>
 
